@@ -17,12 +17,17 @@
 		42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E31BA4017F007D7B13 /* Bill.swift */; };
 		42FE23E71BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
 		42FE23E81BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
-		42FE23EA1BA40180007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E91BA40180007D7B13 /* BillGroup.swift */; };
-		42FE23EB1BA40180007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E91BA40180007D7B13 /* BillGroup.swift */; };
 		880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A70321BA472190017B8E0 /* LeftMenuViewController.swift */; };
+		88ECA5A41BA481DE007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
+		88ECA5A51BA48250007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
+		88ECA5A61BA48253007E04AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA141BA3975C0063A787 /* AppDelegate.swift */; };
+		88ECA5A71BA48256007E04AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* LoginViewController.swift */; };
+		88ECA5A81BA4825A007E04AE /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A70321BA472190017B8E0 /* LeftMenuViewController.swift */; };
+		88ECA5AA1BA482A8007E04AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A91BA482A8007E04AE /* MainViewController.swift */; };
+		88ECA5AB1BA482A8007E04AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A91BA482A8007E04AE /* MainViewController.swift */; };
 		B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA141BA3975C0063A787 /* AppDelegate.swift */; };
 		B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */; };
-		B5E9DA1A1BA3975C0063A787 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* MainViewController.swift */; };
+		B5E9DA1A1BA3975C0063A787 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* LoginViewController.swift */; };
 		B5E9DA1D1BA3975C0063A787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E9DA1B1BA3975C0063A787 /* Main.storyboard */; };
 		B5E9DA1F1BA3975C0063A787 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E9DA1E1BA3975C0063A787 /* Images.xcassets */; };
 		B5E9DA221BA3975C0063A787 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */; };
@@ -48,14 +53,15 @@
 		42FE23E01BA3FB9D007D7B13 /* BillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillManager.swift; sourceTree = "<group>"; };
 		42FE23E31BA4017F007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		42FE23E61BA40180007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		42FE23E91BA40180007D7B13 /* BillGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillGroup.swift; sourceTree = "<group>"; };
 		880A70321BA472190017B8E0 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		880A70341BA472D20017B8E0 /* BillBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BillBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		88ECA5A31BA481DE007E04AE /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		88ECA5A91BA482A8007E04AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B5E9DA0F1BA3975C0063A787 /* BillBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9DA131BA3975C0063A787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E9DA141BA3975C0063A787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E9DA171BA3975C0063A787 /* BillBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillBoard.xcdatamodel; sourceTree = "<group>"; };
-		B5E9DA191BA3975C0063A787 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B5E9DA191BA3975C0063A787 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B5E9DA1C1BA3975C0063A787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5E9DA1E1BA3975C0063A787 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5E9DA211BA3975C0063A787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -104,8 +110,8 @@
 		42FE23D61BA3BDEA007D7B13 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				42FE23E91BA40180007D7B13 /* Board.swift */,
 				42FE23E61BA40180007D7B13 /* Person.swift */,
+				88ECA5A31BA481DE007E04AE /* Board.swift */,
 				42FE23E31BA4017F007D7B13 /* Bill.swift */,
 				B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */,
 			);
@@ -137,7 +143,8 @@
 			children = (
 				42FE23D61BA3BDEA007D7B13 /* CoreData */,
 				B5E9DA141BA3975C0063A787 /* AppDelegate.swift */,
-				B5E9DA191BA3975C0063A787 /* MainViewController.swift */,
+				88ECA5A91BA482A8007E04AE /* MainViewController.swift */,
+				B5E9DA191BA3975C0063A787 /* LoginViewController.swift */,
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
 				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
@@ -329,9 +336,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FE23EA1BA40180007D7B13 /* BillGroup.swift in Sources */,
-				B5E9DA1A1BA3975C0063A787 /* MainViewController.swift in Sources */,
+				B5E9DA1A1BA3975C0063A787 /* LoginViewController.swift in Sources */,
+				88ECA5AA1BA482A8007E04AE /* MainViewController.swift in Sources */,
 				42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */,
+				88ECA5A41BA481DE007E04AE /* Board.swift in Sources */,
 				B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */,
 				880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */,
 				42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
@@ -346,11 +354,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FE23EB1BA40180007D7B13 /* Board.swift in Sources */,
+				88ECA5A61BA48253007E04AE /* AppDelegate.swift in Sources */,
+				88ECA5AB1BA482A8007E04AE /* MainViewController.swift in Sources */,
 				42FE23E81BA40180007D7B13 /* Person.swift in Sources */,
 				42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */,
 				42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */,
+				88ECA5A81BA4825A007E04AE /* LeftMenuViewController.swift in Sources */,
 				42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
+				88ECA5A51BA48250007E04AE /* Board.swift in Sources */,
+				88ECA5A71BA48256007E04AE /* LoginViewController.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,
 				42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 			);

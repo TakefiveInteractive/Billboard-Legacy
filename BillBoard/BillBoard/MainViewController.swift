@@ -1,45 +1,35 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  BillBoard
 //
-//  Created by YanHan on 15/9/11.
-//  Copyright (c) 2015年 Takefive Interactive. All rights reserved.
+//  Created by Wang Yu on 9/12/15.
+//  Copyright (c) 2015 Takefive Interactive. All rights reserved.
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 
-class MainViewController: MainUIViewController, FBSDKLoginButtonDelegate {
+class MainViewController: UIViewController {
 
-    var loginButton: FBSDKLoginButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(isConnectedToNetwork())
-        
-        self.loginButton = FBSDKLoginButton()
-        self.loginButton.center = self.view.center
-        self.loginButton.delegate = self
-        self.view.addSubview(self.loginButton)
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        
+
+        // Do any additional setup after loading the view.
     }
 
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
