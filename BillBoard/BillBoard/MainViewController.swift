@@ -32,6 +32,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         blue.backgroundColor = UIColor.blueColor()
         scrollContentView.addSubview(red)
         scrollContentView.addSubview(blue)
+        if !UserInfo.isLogin(){
+            displayLoginViewController()
+        }
+        // Do any additional setup after loading the view.
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
