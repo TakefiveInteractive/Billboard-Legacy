@@ -24,7 +24,6 @@ class Board: NSManagedObject {
         self.id = id
         self.isActive = isActive
         self.name = name
-        
     }
     
     func getPeopleList(){
