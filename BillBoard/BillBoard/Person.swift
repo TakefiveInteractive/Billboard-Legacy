@@ -12,12 +12,12 @@ import CoreData
 class Person: NSManagedObject {
 
     @NSManaged var totalAmount: NSNumber
-    @NSManaged var userId: NSNumber
+    @NSManaged var userId: String
     @NSManaged var userName: String
     @NSManaged var billList: NSSet
-    @NSManaged var group: BillGroup
+    @NSManaged var group: Board
     
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, userId: NSNumber, totalAmount: NSNumber, userName: String, group: BillGroup, billList: [String: AnyObject]){
+    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, userId: String, totalAmount: NSNumber, userName: String, group: Board, billList: [String: AnyObject]){
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         self.group = group
         self.userName = userName
