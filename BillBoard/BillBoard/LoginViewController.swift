@@ -35,6 +35,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    @IBAction func exit(){
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
