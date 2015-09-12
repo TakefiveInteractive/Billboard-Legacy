@@ -21,15 +21,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.loginButton.center = self.view.center
         self.loginButton.delegate = self
         self.view.addSubview(self.loginButton)
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println(result.description)
-
         UserInfo.facebookLogin(result.token.tokenString, completion: { (error, result) -> () in
-            
+            if error != ""{
+                //succ
+                self.exit()
+            }else{
+                println(error)
+            }
         })
     }
 

@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import FBSDKCoreKit
+
 
 var UserInfo: UserManager = UserManager()
 
@@ -19,7 +21,7 @@ class UserManager: NSObject {
     var userName = ""
     
     lazy var isLogin: (() -> (Bool)) = {
-        if self.userDefault.objectForKey("userID") != nil && count(self.userDefault.objectForKey("userID") as! String) > 0 {
+        if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
             return true
         }else{
             return false
@@ -30,8 +32,14 @@ class UserManager: NSObject {
         if error == nil{
             //succ
             if JSON != nil{
-                let result = SwiftyJSON.JSON(JSON!)
+                let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
+                if result["accessToken"] != nil && result["accessToken"]!.count > 0{
+                    userDefault.setObject(result["accessToken"], forKey: "userToken")
+                    userDefault.synchronize()
+                }
                 completion(error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
+            }else{
+                completion(error: "", result: nil)
             }
             
         }else{
@@ -45,14 +53,25 @@ class UserManager: NSObject {
     }
     
     func facebookLogin(token: String, completion:(error: String, result: [String: AnyObject]?) -> ()){
-        Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
-            self.jsonResponse(response, JSON: JSON, error: error, completion: completion)
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if error == nil{
+                    self.userDefault.setObject(result["id"]!, forKey: "userID")
+                    self.userDefault.setObject(result["name"]!, forKey: "userName")
+                    self.userDefault.synchronize()
+                    
+                    Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
+                        self.jsonResponse(response, JSON: JSON, error: error, completion: completion)
+                    }
+                    
+                }else{
+                    //error
+                    completion(error: error.description, result: nil)
+                }
+            })
         }
-    }
-    
-    func login(userID: String){
-        userDefault.setObject(userID, forKey: "userID")
-        userDefault.synchronize()
+
     }
     
     func logout(){
