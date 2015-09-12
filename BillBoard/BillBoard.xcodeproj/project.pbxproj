@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		425038F01BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */; };
 		425038F11BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */; };
+		425038F31BA48739003E66ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F21BA48739003E66ED /* Constants.swift */; };
+		425038F41BA48739003E66ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F21BA48739003E66ED /* Constants.swift */; };
+		425038F61BA494DF003E66ED /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F51BA494DF003E66ED /* InternetConnection.swift */; };
+		425038F71BA494DF003E66ED /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F51BA494DF003E66ED /* InternetConnection.swift */; };
 		42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
@@ -51,6 +55,8 @@
 		3207F79A6E636CE9A9CFFE46 /* Pods_BillBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D13A52F94F7D07FD055FF1 /* Pods-BillBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillBoard/Pods-BillBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		425038F21BA48739003E66ED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		425038F51BA494DF003E66ED /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		42FE23E01BA3FB9D007D7B13 /* BillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillManager.swift; sourceTree = "<group>"; };
@@ -146,10 +152,12 @@
 			children = (
 				42FE23D61BA3BDEA007D7B13 /* CoreData */,
 				B5E9DA141BA3975C0063A787 /* AppDelegate.swift */,
+				425038F21BA48739003E66ED /* Constants.swift */,
 				88ECA5A91BA482A8007E04AE /* MainViewController.swift */,
 				B5E9DA191BA3975C0063A787 /* LoginViewController.swift */,
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
+				425038F51BA494DF003E66ED /* InternetConnection.swift */,
 				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */,
@@ -349,8 +357,10 @@
 				42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
 				42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */,
 				425038F01BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
+				425038F31BA48739003E66ED /* Constants.swift in Sources */,
 				42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
+				425038F61BA494DF003E66ED /* InternetConnection.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,8 +378,10 @@
 				42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
 				88ECA5A51BA48250007E04AE /* Board.swift in Sources */,
 				425038F11BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
+				425038F41BA48739003E66ED /* Constants.swift in Sources */,
 				88ECA5A71BA48256007E04AE /* LoginViewController.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,
+				425038F71BA494DF003E66ED /* InternetConnection.swift in Sources */,
 				42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         if !UserInfo.isLogin(){
-                displayLoginViewController()
+            displayLoginViewController()
         }
         // Do any additional setup after loading the view.
     }

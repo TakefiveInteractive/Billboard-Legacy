@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 var UserInfo: UserManager = UserManager()
 
@@ -21,6 +23,27 @@ class UserManager: NSObject {
             return true
         }else{
             return false
+        }
+    }
+    
+    func facebookLogin(token: String, completion:(error: String, result: [String: AnyObject]?) -> ()){
+        Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
+            
+            if error == nil{
+                //succ
+                if JSON != nil{
+                    let result = SwiftyJSON.JSON(JSON!)
+                    
+                }
+                
+            }else{
+                //error
+                if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
+                    completion(error: SwiftyJSON.JSON(JSON!)["error"] as String, result: nil)
+                }else{
+                    completion(error: error!.description, result: nil)
+                }
+            }
         }
     }
     
