@@ -10,6 +10,11 @@
 		42FE23D31BA3BDC1007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D01BA3BDC1007D7B13 /* Person.swift */; };
 		42FE23D41BA3BDC1007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D11BA3BDC1007D7B13 /* Bill.swift */; };
 		42FE23D51BA3BDC1007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */; };
+		42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
+		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
+		42FE23DA1BA3BE29007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D11BA3BDC1007D7B13 /* Bill.swift */; };
+		42FE23DB1BA3BE2C007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D01BA3BDC1007D7B13 /* Person.swift */; };
+		42FE23DC1BA3BE2E007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */; };
 		B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA141BA3975C0063A787 /* AppDelegate.swift */; };
 		B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */; };
 		B5E9DA1A1BA3975C0063A787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* ViewController.swift */; };
@@ -36,6 +41,7 @@
 		42FE23D01BA3BDC1007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		42FE23D11BA3BDC1007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillGroup.swift; sourceTree = "<group>"; };
+		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		B5E9DA0F1BA3975C0063A787 /* BillBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9DA131BA3975C0063A787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E9DA141BA3975C0063A787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				42FE23D61BA3BDEA007D7B13 /* CoreData */,
 				B5E9DA141BA3975C0063A787 /* AppDelegate.swift */,
 				B5E9DA191BA3975C0063A787 /* ViewController.swift */,
+				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
 				B5E9DA1B1BA3975C0063A787 /* Main.storyboard */,
 				B5E9DA1E1BA3975C0063A787 /* Images.xcassets */,
 				B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */,
@@ -311,6 +318,7 @@
 			files = (
 				42FE23D51BA3BDC1007D7B13 /* BillGroup.swift in Sources */,
 				B5E9DA1A1BA3975C0063A787 /* ViewController.swift in Sources */,
+				42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */,
 				42FE23D41BA3BDC1007D7B13 /* Bill.swift in Sources */,
 				B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */,
 				42FE23D31BA3BDC1007D7B13 /* Person.swift in Sources */,
@@ -322,7 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */,
+				42FE23DA1BA3BE29007D7B13 /* Bill.swift in Sources */,
+				42FE23DB1BA3BE2C007D7B13 /* Person.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,
+				42FE23DC1BA3BE2E007D7B13 /* BillGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
