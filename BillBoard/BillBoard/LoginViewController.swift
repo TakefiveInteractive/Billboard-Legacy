@@ -26,8 +26,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println(result.description)
-        UserInfo.facebookLogin(result.token.tokenString, completion: { (error, result) -> () in
-            if error != ""{
+        UserInfo.facebookLogin(result.token.tokenString, completion: { (succ, error, result) -> () in
+            if succ{
                 //succ
                 self.exit()
             }else{
@@ -41,8 +41,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func exit(){
-        self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

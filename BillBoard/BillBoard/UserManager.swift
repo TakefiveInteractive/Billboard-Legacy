@@ -28,31 +28,35 @@ class UserManager: NSObject {
         }
     }
     
-    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?, completion:(error: String, result: [String: AnyObject]?) -> ()){
+    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         if error == nil{
             //succ
             if JSON != nil{
                 let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
-                if result["accessToken"] != nil && result["accessToken"]!.count > 0{
+
+                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == "" && result["accessToken"] != nil && result["accessToken"]!.count > 0 {
                     userDefault.setObject(result["accessToken"], forKey: "userToken")
                     userDefault.synchronize()
+                    completion(succ: true, error: "", result: SwiftyJSON.JSON(JSON!).dictionaryObject)
+                    
+                }else{
+                    completion(succ: false, error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
                 }
-                completion(error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
             }else{
-                completion(error: "", result: nil)
+                completion(succ: true, error: "", result: nil)
             }
             
         }else{
             //error
             if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-                completion(error: SwiftyJSON.JSON(JSON!)["error"].string!, result: nil)
+                completion(succ: false, error: SwiftyJSON.JSON(JSON!)["error"].string!, result: nil)
             }else{
-                completion(error: error!.description, result: nil)
+                completion(succ: false, error: error!.description, result: nil)
             }
         }
     }
     
-    func facebookLogin(token: String, completion:(error: String, result: [String: AnyObject]?) -> ()){
+    func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -67,7 +71,7 @@ class UserManager: NSObject {
                     
                 }else{
                     //error
-                    completion(error: error.description, result: nil)
+                    completion(succ: false, error: error.description, result: nil)
                 }
             })
         }
