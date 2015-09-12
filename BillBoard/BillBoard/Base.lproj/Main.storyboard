@@ -227,8 +227,8 @@
                     <connections>
                         <outlet property="GetHelpButton" destination="3S1-gW-mg5" id="fZs-6l-UBq"/>
                         <outlet property="SettingsButton" destination="3S1-gW-mg5" id="MzZ-NO-baL"/>
-                        <outlet property="UserID" destination="Pic-hv-STL" id="lWg-eW-rHS"/>
-                        <outlet property="UserName" destination="DpX-jF-DVc" id="9Qg-wP-Cye"/>
+                        <outlet property="userEmail" destination="Pic-hv-STL" id="HjC-lk-6wO"/>
+                        <outlet property="userName" destination="DpX-jF-DVc" id="Nvh-xs-Sj4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7v-Se-lXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
