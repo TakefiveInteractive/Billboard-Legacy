@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
         self.revealController = PKRevealController(frontViewController: mainNavigationController, leftViewController: leftMenuViewController)
         self.revealController.delegate = self
         self.revealController.animationDuration = 0.25
+        self.revealController.setMinimumWidth(UIScreen.mainScreen().bounds.width * 320/375, maximumWidth: 375, forViewController: leftMenuViewController)
         
         self.window?.rootViewController = self.revealController
         self.window?.makeKeyAndVisible()
