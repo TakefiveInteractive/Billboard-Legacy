@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42FE23D31BA3BDC1007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D01BA3BDC1007D7B13 /* Person.swift */; };
-		42FE23D41BA3BDC1007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D11BA3BDC1007D7B13 /* Bill.swift */; };
-		42FE23D51BA3BDC1007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */; };
 		42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
-		42FE23DA1BA3BE29007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D11BA3BDC1007D7B13 /* Bill.swift */; };
-		42FE23DB1BA3BE2C007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D01BA3BDC1007D7B13 /* Person.swift */; };
-		42FE23DC1BA3BE2E007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */; };
 		42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
 		42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
+		42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E01BA3FB9D007D7B13 /* BillManager.swift */; };
+		42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E01BA3FB9D007D7B13 /* BillManager.swift */; };
+		42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E31BA4017F007D7B13 /* Bill.swift */; };
+		42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E31BA4017F007D7B13 /* Bill.swift */; };
+		42FE23E71BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
+		42FE23E81BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
+		42FE23EA1BA40180007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E91BA40180007D7B13 /* BillGroup.swift */; };
+		42FE23EB1BA40180007D7B13 /* BillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E91BA40180007D7B13 /* BillGroup.swift */; };
 		B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA141BA3975C0063A787 /* AppDelegate.swift */; };
 		B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */; };
 		B5E9DA1A1BA3975C0063A787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* ViewController.swift */; };
@@ -40,11 +42,12 @@
 /* Begin PBXFileReference section */
 		3207F79A6E636CE9A9CFFE46 /* Pods_BillBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D13A52F94F7D07FD055FF1 /* Pods-BillBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillBoard/Pods-BillBoard.debug.xcconfig"; sourceTree = "<group>"; };
-		42FE23D01BA3BDC1007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		42FE23D11BA3BDC1007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
-		42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillGroup.swift; sourceTree = "<group>"; };
 		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		42FE23E01BA3FB9D007D7B13 /* BillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillManager.swift; sourceTree = "<group>"; };
+		42FE23E31BA4017F007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		42FE23E61BA40180007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		42FE23E91BA40180007D7B13 /* BillGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillGroup.swift; sourceTree = "<group>"; };
 		B5E9DA0F1BA3975C0063A787 /* BillBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9DA131BA3975C0063A787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E9DA141BA3975C0063A787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,9 +101,9 @@
 		42FE23D61BA3BDEA007D7B13 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				42FE23D01BA3BDC1007D7B13 /* Person.swift */,
-				42FE23D11BA3BDC1007D7B13 /* Bill.swift */,
-				42FE23D21BA3BDC1007D7B13 /* BillGroup.swift */,
+				42FE23E91BA40180007D7B13 /* BillGroup.swift */,
+				42FE23E61BA40180007D7B13 /* Person.swift */,
+				42FE23E31BA4017F007D7B13 /* Bill.swift */,
 				B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -133,6 +136,7 @@
 				B5E9DA141BA3975C0063A787 /* AppDelegate.swift */,
 				B5E9DA191BA3975C0063A787 /* ViewController.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
+				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				B5E9DA1B1BA3975C0063A787 /* Main.storyboard */,
 				B5E9DA1E1BA3975C0063A787 /* Images.xcassets */,
@@ -320,13 +324,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FE23D51BA3BDC1007D7B13 /* BillGroup.swift in Sources */,
+				42FE23EA1BA40180007D7B13 /* BillGroup.swift in Sources */,
 				B5E9DA1A1BA3975C0063A787 /* ViewController.swift in Sources */,
 				42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */,
-				42FE23D41BA3BDC1007D7B13 /* Bill.swift in Sources */,
 				B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */,
-				42FE23D31BA3BDC1007D7B13 /* Person.swift in Sources */,
 				42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
+				42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */,
+				42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */,
+				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,12 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FE23EB1BA40180007D7B13 /* BillGroup.swift in Sources */,
+				42FE23E81BA40180007D7B13 /* Person.swift in Sources */,
 				42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */,
-				42FE23DA1BA3BE29007D7B13 /* Bill.swift in Sources */,
+				42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */,
 				42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
-				42FE23DB1BA3BE2C007D7B13 /* Person.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,
-				42FE23DC1BA3BE2E007D7B13 /* BillGroup.swift in Sources */,
+				42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
