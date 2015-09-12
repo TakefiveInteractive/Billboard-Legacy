@@ -18,13 +18,29 @@ class UserManager: NSObject {
     
     let userDefault:NSUserDefaults
 
-    var userName:String?
-    var userEmail:String?
+    var userName:String? {
+        get {
+            return self.userName ?? ""
+        }
+        set {
+            self.userName = newValue
+        }
+    }
+    var userEmail:String? {
+        get {
+            return self.userEmail ?? ""
+        }
+        set {
+            self.userEmail = newValue
+        }
+    }
     
     override init() {
        userDefault = NSUserDefaults.standardUserDefaults()
+        super.init()
         userName = self.userDefault.objectForKey("userName") as? String
         userEmail = self.userDefault.objectForKey("userEmail") as? String
+
     }
     
     lazy var isLogin: (() -> (Bool)) = {
