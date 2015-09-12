@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.loginButton = FBSDKLoginButton()
         self.loginButton.center = self.view.center
         self.loginButton.delegate = self
+        self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         self.view.addSubview(self.loginButton)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -38,6 +39,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        exit()
     }
     
     func exit(){

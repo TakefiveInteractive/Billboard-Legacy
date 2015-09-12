@@ -16,9 +16,29 @@ var UserInfo: UserManager = UserManager()
 
 class UserManager: NSObject {
     
-    let userDefault = NSUserDefaults.standardUserDefaults()
+    let userDefault:NSUserDefaults
 
-    var userName = ""
+
+    func getUserName()->String{
+        if let str = userDefault.objectForKey("userName") as? String{
+            return str
+        }else{
+            return ""
+        }
+    }
+    
+    func getUserEmail()->String{
+        if let str = userDefault.objectForKey("userEmail") as? String{
+            return str
+        }else{
+            return ""
+        }
+    }
+
+    override init() {
+       userDefault = NSUserDefaults.standardUserDefaults()
+
+    }
     
     lazy var isLogin: (() -> (Bool)) = {
         if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
@@ -31,10 +51,14 @@ class UserManager: NSObject {
     func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                self.getFriends()
+            
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
+                    self.userDefault.setObject(result["email"]!, forKey: "userEmail")
+                    println(result)
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
@@ -60,6 +84,19 @@ class UserManager: NSObject {
             })
         }
 
+    }
+    
+    func getFriends(){
+    
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if error == nil{
+                    println(result)
+                }
+            })
+        }
+        
     }
     
     func logout(){
