@@ -8,15 +8,28 @@
 
 import UIKit
 import CoreData
+import PKRevealController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
 
     var window: UIWindow?
-
+    var revealController: PKRevealController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        let leftMenuViewController = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController
+        
+        self.revealController = PKRevealController(frontViewController: mainViewController, leftViewController: leftMenuViewController)
+        self.revealController.delegate = self
+        self.revealController.animationDuration = 0.25
+        
+        self.window?.rootViewController = self.revealController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

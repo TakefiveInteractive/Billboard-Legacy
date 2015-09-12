@@ -16,6 +16,7 @@ pod 'SnapKit'
 pod 'WYInteractiveTransitions'
 pod 'ZFRippleButton'
 pod 'CRToast'
+pod 'PKRevealController'
 end
 
 target 'BillBoardTests' do

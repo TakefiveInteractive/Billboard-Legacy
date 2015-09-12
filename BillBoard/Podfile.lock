@@ -5,6 +5,7 @@ PODS:
   - DZNEmptyDataSet (1.7.1)
   - JTSImageViewController (1.4)
   - MJRefresh (2.4.9)
+  - PKRevealController (2.0.6)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - JTSImageViewController
   - MJRefresh
+  - PKRevealController
   - SDWebImage
   - SnapKit
   - Spring
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 2a398066c2bf5848f7f693fb50954b5064debd12
   JTSImageViewController: 6a367b144e257db02cdfacdba78d684377d3777b
   MJRefresh: be84acb912d0a66364f76a75426698a39528e2ed
+  PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SnapKit: 69fe274c71511df89a5591c11437a8b826bfa9eb
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
