@@ -40,6 +40,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        exit()
+    }
+    
     func exit(){
         self.dismissViewControllerAnimated(true, completion: nil)
     }

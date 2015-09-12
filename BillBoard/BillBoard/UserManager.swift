@@ -18,7 +18,7 @@ class UserManager: NSObject {
     
     let userDefault = NSUserDefaults.standardUserDefaults()
 
-    var userName = ""
+    var userName = "Kedan"
     
     lazy var isLogin: (() -> (Bool)) = {
         if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
