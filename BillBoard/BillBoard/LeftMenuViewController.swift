@@ -10,8 +10,12 @@ import UIKit
 
 class LeftMenuViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userID: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userName.text="\(UserInfo.userName)"
 
         // Do any additional setup after loading the view.
     }
