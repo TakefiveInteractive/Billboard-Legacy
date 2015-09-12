@@ -10,8 +10,10 @@ import UIKit
 
 class LeftMenuViewController: UIViewController {
 
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var SettingsButton: UIButton!
+    @IBOutlet weak var GetHelpButton: UIButton!
     @IBOutlet weak var userID: UILabel!
+    @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,13 @@ class LeftMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func SettingsButton(sender: AnyObject) {
+        
+    }
+    @IBAction func GetHelpButton(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://www.tk5.us")!)
 
+    }
     /*
     // MARK: - Navigation
 

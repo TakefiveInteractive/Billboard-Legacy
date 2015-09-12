@@ -191,6 +191,9 @@
                                         <state key="normal" title="Settings" image="setting">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SettingsButton:" destination="3ZQ-eg-Cyh" eventType="touchUpInside" id="ipC-FR-0bf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S1-gW-mg5">
                                         <rect key="frame" x="25" y="60" width="114" height="22"/>
@@ -198,6 +201,9 @@
                                         <state key="normal" title="Get Help" image="GetHelp">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="GetHelpButton:" destination="3ZQ-eg-Cyh" eventType="touchUpInside" id="q4h-b5-fml"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.61176470589999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -219,6 +225,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="GetHelpButton" destination="3S1-gW-mg5" id="fZs-6l-UBq"/>
+                        <outlet property="SettingsButton" destination="3S1-gW-mg5" id="MzZ-NO-baL"/>
                         <outlet property="UserID" destination="Pic-hv-STL" id="lWg-eW-rHS"/>
                         <outlet property="UserName" destination="DpX-jF-DVc" id="9Qg-wP-Cye"/>
                     </connections>
