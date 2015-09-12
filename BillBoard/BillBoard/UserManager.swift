@@ -39,7 +39,7 @@ class UserManager: NSObject {
             }else{
                 //error
                 if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-                    completion(error: SwiftyJSON.JSON(JSON!)["error"] as String, result: nil)
+//                    completion(error: SwiftyJSON.JSON(JSON!)["error"] as String, result: nil)
                 }else{
                     completion(error: error!.description, result: nil)
                 }

@@ -26,15 +26,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
         scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, scrollViewHeight)
-        let red = UIView(frame: CGRectMake(0, 0, scrollView.bounds.width, scrollView.bounds.height))
-        red.backgroundColor = UIColor.redColor()
-        let blue = UIView(frame: CGRectMake(scrollView.bounds.width, 0, scrollView.bounds.width, scrollView.bounds.height))
-        blue.backgroundColor = UIColor.blueColor()
-        scrollContentView.addSubview(red)
-        scrollContentView.addSubview(blue)
-        if !UserInfo.isLogin(){
-            displayLoginViewController()
-        }
+
         // Do any additional setup after loading the view.
     }
 

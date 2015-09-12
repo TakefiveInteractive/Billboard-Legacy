@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainNavigationController = storyboard.instantiateViewControllerWithIdentifier("MainNavigationController") as! UINavigationController
         let leftMenuViewController = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController

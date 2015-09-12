@@ -20,9 +20,9 @@ extension UIViewController{
     }
     
     func displayLoginViewController(){
-        var loginViewController: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("loginView")!
-        addChildViewController(loginViewController as! UIViewController)
+        var loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
         loginViewController.didMoveToParentViewController(self)
+        self.presentViewController(loginViewController, animated: true, completion: nil)
         loginViewController.view!.alpha = 0
         self.view.addSubview(loginViewController.view)
         UIView.animateWithDuration(0.4, animations: { () -> Void in
