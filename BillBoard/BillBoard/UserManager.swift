@@ -17,8 +17,8 @@ var UserInfo: UserManager = UserManager()
 class UserManager: NSObject {
     
     let userDefault = NSUserDefaults.standardUserDefaults()
-    
-    var userName = NSUserDefaults.standardUserDefaults().objectForKey("userName") as! String
+
+    var userName = ""
     
     lazy var isLogin: (() -> (Bool)) = {
         if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
@@ -28,38 +28,29 @@ class UserManager: NSObject {
         }
     }
     
-    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
+    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?)->Bool{
         if error == nil{
             //succ
             if JSON != nil{
                 let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
 
-                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == ""{
-                    loginHandler(SwiftyJSON.JSON(JSON!).dictionaryObject!, completion: completion)
+                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == "" {
+                    return true
+                    
                 }else{
-                    completion(succ: false, error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
+                    return false
                 }
             }else{
-                completion(succ: true, error: "", result: nil)
+                return true
             }
             
         }else{
             //error
             if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-                completion(succ: false, error: SwiftyJSON.JSON(JSON!)["error"].string!, result: nil)
+                return false
             }else{
-                completion(succ: false, error: error!.description, result: nil)
+                return false
             }
-        }
-    }
-    
-    func loginHandler(result: [String: AnyObject],completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
-        if result["accessToken"] != nil && result["accessToken"]!.count > 0 {
-            userDefault.setObject(result["accessToken"], forKey: "userToken")
-            userDefault.synchronize()
-            completion(succ: true, error: "", result: result)
-        }else{
-            completion(succ: false, error: "token empty", result: result)
         }
     }
     
@@ -70,11 +61,20 @@ class UserManager: NSObject {
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
-                    self.userName = result["name"]! as! String
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
-                        self.jsonResponse(response, JSON: JSON, error: error, completion: completion)
+                        if self.jsonResponse(response, JSON: JSON, error: error){
+                            
+                            let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
+
+                            if result["accessToken"] != nil && result["accessToken"]!.count > 0 {
+                                self.userDefault.setObject(result["accessToken"], forKey: "userToken")
+                                self.userDefault.synchronize()
+                            }else{
+                                
+                            }
+                        }
                     }
                     
                 }else{
@@ -88,9 +88,6 @@ class UserManager: NSObject {
     
     func logout(){
         userDefault.setObject("", forKey: "userID")
-        userDefault.setObject("", forKey: "userName")
-        userDefault.setObject("", forKey: "userToken")
-
         userDefault.synchronize()
     }
     
