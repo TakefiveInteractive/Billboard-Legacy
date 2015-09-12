@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var menuBarButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -21,9 +20,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
-        if !UserInfo.isLogin(){
-            displayLoginViewController()
-        }
+//        if !UserInfo.isLogin(){
+//            displayLoginViewController()
+//        }
         
     }
 
@@ -49,7 +48,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
-    @IBAction func menuButtonDidPressed(sender: UIButton) {
+    @IBAction func menuButtonDidPressed(sender: UIBarButtonItem) {
         revealController.showViewController(revealController.leftViewController)
     }
 }

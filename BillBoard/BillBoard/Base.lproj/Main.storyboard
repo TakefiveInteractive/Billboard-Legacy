@@ -80,17 +80,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="uBt-bb-RJz">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="ebj-Bs-aT1">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XzI-g2-sCb">
-                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="menuButtonDidPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G8r-tE-BQF"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" image="ham_menu" id="3ex-aN-Z0O">
+                            <connections>
+                                <action selector="menuButtonDidPressed:" destination="vXZ-lx-hvc" id="sTg-mq-Zz7"/>
+                            </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xfi-31-acr">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
@@ -103,7 +96,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="menuBarButton" destination="XzI-g2-sCb" id="uiK-Kc-Qto"/>
                         <outlet property="scrollContentView" destination="Ts4-Xe-xJw" id="stM-o8-lGu"/>
                         <outlet property="scrollView" destination="LYp-45-3SJ" id="IXq-xG-iEV"/>
                         <outlet property="searchBar" destination="xYU-Mm-rMQ" id="g7e-fa-xLb"/>
@@ -241,11 +233,11 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="cQI-Ij-3lt"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-Fr-Xrx">
-                                                    <rect key="frame" x="8" y="8" width="359" height="79.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-Fr-Xrx">
+                                                    <rect key="frame" x="8" y="8" width="359" height="72"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eus-jY-YUd" customClass="DesignableImageView" customModule="Spring">
-                                                            <rect key="frame" x="8" y="18" width="44" height="44"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eus-jY-YUd" customClass="DesignableImageView" customModule="Spring">
+                                                            <rect key="frame" x="8" y="14" width="44" height="44"/>
                                                             <color key="backgroundColor" red="0.85262101889999997" green="0.42218321559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="2WE-BD-mJ4"/>
@@ -257,8 +249,8 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-eM-qEP" customClass="DesignableImageView" customModule="Spring">
-                                                            <rect key="frame" x="44" y="18" width="44" height="44"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-eM-qEP" customClass="DesignableImageView" customModule="Spring">
+                                                            <rect key="frame" x="44" y="14" width="44" height="44"/>
                                                             <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="H98-9o-t9D"/>
@@ -270,26 +262,26 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="22.22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-wk-fXl">
-                                                            <rect key="frame" x="300" y="29" width="43" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22.22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-wk-fXl">
+                                                            <rect key="frame" x="290" y="23" width="52.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                                             <color key="textColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRi-cj-oFk">
-                                                            <rect key="frame" x="279" y="25" width="13.5" height="29"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRi-cj-oFk">
+                                                            <rect key="frame" x="267" y="20" width="15" height="32.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                             <color key="textColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Airbnb payment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIb-aQ-iaW">
-                                                            <rect key="frame" x="104" y="18" width="159.5" height="19.5"/>
+                                                            <rect key="frame" x="104" y="18" width="147" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Sep 12, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="204-Vh-guh">
-                                                            <rect key="frame" x="104" y="47" width="74" height="14.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sep 12, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="204-Vh-guh">
+                                                            <rect key="frame" x="104" y="39" width="74" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -390,4 +382,7 @@
             <point key="canvasLocation" x="1368.5" y="90.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ham_menu" width="21" height="21"/>
+    </resources>
 </document>
