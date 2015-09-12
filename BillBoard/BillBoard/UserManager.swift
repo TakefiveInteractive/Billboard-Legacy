@@ -32,9 +32,13 @@ class UserManager: NSObject {
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                
+                self.getFriends()
+                
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
+                    println(result)
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
@@ -60,6 +64,17 @@ class UserManager: NSObject {
             })
         }
 
+    }
+    
+    func getFriends(){
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if error == nil{
+                    println(result)
+                }
+            })
+        }
+        
     }
     
     func logout(){

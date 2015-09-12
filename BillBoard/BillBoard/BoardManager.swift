@@ -29,6 +29,18 @@ class BoardManager: NSObject {
         }
     }
     
+    func getBoardList()->[Board]?{
+        var fetchRequest = NSFetchRequest(entityName: "Board")
+        fetchRequest.includesPropertyValues = true //only fetch the managedObjectID
+        var error: NSError?
+        var fetchedBoard = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Board]
+        return fetchedBoard
+    }
+    
+    func addBoard(info: [String: AnyObject]){
+        
+    }
+    
     func saveContext(){
         //save context
         var error: NSError?
