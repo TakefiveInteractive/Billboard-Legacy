@@ -20,6 +20,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        if !UserInfo.isLogin(){
+            displayLoginViewController()
+        }
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,7 +37,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let offsetX = scrollView.contentOffset.x
-        let page = Int( offsetX / UIScreen.mainScreen().bounds.width )
+        let page = Int( offsetX / (UIScreen.mainScreen().bounds.width/2) )
         segmentControl.selectedSegmentIndex = page
     }
     
