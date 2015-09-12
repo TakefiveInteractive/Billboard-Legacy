@@ -13,7 +13,7 @@ import SwiftyJSON
 var UserInfo: UserManager = UserManager()
 
 class UserManager: NSObject {
-
+    
     let userDefault = NSUserDefaults.standardUserDefaults()
 
     var userName = ""
@@ -26,24 +26,27 @@ class UserManager: NSObject {
         }
     }
     
+    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?, completion:(error: String, result: [String: AnyObject]?) -> ()){
+        if error == nil{
+            //succ
+            if JSON != nil{
+                let result = SwiftyJSON.JSON(JSON!)
+                completion(error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
+            }
+            
+        }else{
+            //error
+            if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
+                completion(error: SwiftyJSON.JSON(JSON!)["error"].string!, result: nil)
+            }else{
+                completion(error: error!.description, result: nil)
+            }
+        }
+    }
+    
     func facebookLogin(token: String, completion:(error: String, result: [String: AnyObject]?) -> ()){
         Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
-            
-            if error == nil{
-                //succ
-                if JSON != nil{
-                    let result = SwiftyJSON.JSON(JSON!)
-                    
-                }
-                
-            }else{
-                //error
-                if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-//                    completion(error: SwiftyJSON.JSON(JSON!)["error"] as String, result: nil)
-                }else{
-                    completion(error: error!.description, result: nil)
-                }
-            }
+            self.jsonResponse(response, JSON: JSON, error: error, completion: completion)
         }
     }
     
