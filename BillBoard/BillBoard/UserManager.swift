@@ -20,10 +20,10 @@ class UserManager: NSObject {
 
     var userName:String? {
         get {
-            return self.userName ?? ""
+            return self.userName
         }
         set {
-            self.userName = newValue
+            self.userName = newValue ?? ""
         }
     }
     var userEmail:String? {
