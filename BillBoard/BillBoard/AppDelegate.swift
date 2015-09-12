@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
         // Override point for customization after application launch.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        let mainNavigationController = storyboard.instantiateViewControllerWithIdentifier("MainNavigationController") as! UINavigationController
         let leftMenuViewController = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController
         
-        self.revealController = PKRevealController(frontViewController: mainViewController, leftViewController: leftMenuViewController)
+        self.revealController = PKRevealController(frontViewController: mainNavigationController, leftViewController: leftMenuViewController)
         self.revealController.delegate = self
         self.revealController.animationDuration = 0.25
         

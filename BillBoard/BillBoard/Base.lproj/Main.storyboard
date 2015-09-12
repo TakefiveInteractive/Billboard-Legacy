@@ -15,10 +15,76 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xYU-Mm-rMQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UI0-2z-H2d"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYp-45-3SJ">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-Xe-xJw">
+                                        <rect key="frame" x="0.0" y="0.0" width="750" height="557"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="557" id="2ui-nk-C1l"/>
+                                            <constraint firstAttribute="width" constant="750" id="PzG-fD-tc9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ts4-Xe-xJw" secondAttribute="trailing" id="G1S-V9-Aoo"/>
+                                    <constraint firstItem="Ts4-Xe-xJw" firstAttribute="leading" secondItem="LYp-45-3SJ" secondAttribute="leading" id="Hwe-6l-coM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ts4-Xe-xJw" secondAttribute="bottom" id="NHs-DQ-ChP"/>
+                                    <constraint firstItem="Ts4-Xe-xJw" firstAttribute="top" secondItem="LYp-45-3SJ" secondAttribute="top" id="gPg-7a-J1W"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LYp-45-3SJ" firstAttribute="top" secondItem="xYU-Mm-rMQ" secondAttribute="bottom" id="8J8-Ab-nIS"/>
+                            <constraint firstAttribute="trailing" secondItem="xYU-Mm-rMQ" secondAttribute="trailing" id="9zo-Xw-AO5"/>
+                            <constraint firstItem="xYU-Mm-rMQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="eaA-4g-Od3"/>
+                            <constraint firstAttribute="trailing" secondItem="LYp-45-3SJ" secondAttribute="trailing" id="fp3-BK-OmO"/>
+                            <constraint firstItem="LYp-45-3SJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gId-H8-w4R"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LYp-45-3SJ" secondAttribute="bottom" id="oWA-u8-EPX"/>
+                            <constraint firstItem="xYU-Mm-rMQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xIF-Iz-Vjt"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uBt-bb-RJz"/>
+                    <navigationItem key="navigationItem" id="uBt-bb-RJz">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ebj-Bs-aT1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XzI-g2-sCb">
+                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButtonDidPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G8r-tE-BQF"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xfi-31-acr">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Bills"/>
+                                <segment title="Balance"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuBarButton" destination="XzI-g2-sCb" id="uiK-Kc-Qto"/>
+                        <outlet property="scrollContentView" destination="Ts4-Xe-xJw" id="stM-o8-lGu"/>
+                        <outlet property="scrollView" destination="LYp-45-3SJ" id="IXq-xG-iEV"/>
+                        <outlet property="searchBar" destination="xYU-Mm-rMQ" id="g7e-fa-xLb"/>
+                        <outlet property="segmentControl" destination="xfi-31-acr" id="Y4U-Pa-7Zy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,12 +93,17 @@
         <!--Navigation Controller-->
         <scene sceneID="hQ3-cS-GDt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OUd-K8-ozx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="OUd-K8-ozx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4x-T7-BJE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.17160925269126892" green="0.4927183985710144" blue="0.75438535213470459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -8,28 +8,42 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var menuBarButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var scrollContentView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        scrollView.delegate = self
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
+        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, scrollViewHeight)
+        let red = UIView(frame: CGRectMake(0, 0, scrollView.bounds.width, scrollView.bounds.height))
+        red.backgroundColor = UIColor.redColor()
+        let blue = UIView(frame: CGRectMake(scrollView.bounds.width, 0, scrollView.bounds.width, scrollView.bounds.height))
+        blue.backgroundColor = UIColor.blueColor()
+        scrollContentView.addSubview(red)
+        scrollContentView.addSubview(blue)
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetX = scrollView.contentOffset.x
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func menuButtonDidPressed(sender: UIButton) {
+        revealController.showViewController(revealController.leftViewController)
     }
-    */
-
 }
