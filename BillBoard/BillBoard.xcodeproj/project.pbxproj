@@ -29,6 +29,8 @@
 		88ECA5A81BA4825A007E04AE /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A70321BA472190017B8E0 /* LeftMenuViewController.swift */; };
 		88ECA5AA1BA482A8007E04AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A91BA482A8007E04AE /* MainViewController.swift */; };
 		88ECA5AB1BA482A8007E04AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A91BA482A8007E04AE /* MainViewController.swift */; };
+		88ECA5AD1BA4A068007E04AE /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */; };
+		88ECA5AF1BA4A07B007E04AE /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5AE1BA4A07B007E04AE /* BillViewController.swift */; };
 		B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA141BA3975C0063A787 /* AppDelegate.swift */; };
 		B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA161BA3975C0063A787 /* BillBoard.xcdatamodeld */; };
 		B5E9DA1A1BA3975C0063A787 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA191BA3975C0063A787 /* LoginViewController.swift */; };
@@ -63,6 +65,8 @@
 		880A70341BA472D20017B8E0 /* BillBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BillBoard-Bridging-Header.h"; sourceTree = "<group>"; };
 		88ECA5A31BA481DE007E04AE /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		88ECA5A91BA482A8007E04AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		88ECA5AE1BA4A07B007E04AE /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		B5E9DA0F1BA3975C0063A787 /* BillBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9DA131BA3975C0063A787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E9DA141BA3975C0063A787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,12 +155,14 @@
 				B5E9DA141BA3975C0063A787 /* AppDelegate.swift */,
 				425038F21BA48739003E66ED /* Constants.swift */,
 				88ECA5A91BA482A8007E04AE /* MainViewController.swift */,
+				88ECA5AE1BA4A07B007E04AE /* BillViewController.swift */,
 				B5E9DA191BA3975C0063A787 /* LoginViewController.swift */,
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
 				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */,
+				88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */,
 				B5E9DA1B1BA3975C0063A787 /* Main.storyboard */,
 				B5E9DA1E1BA3975C0063A787 /* Images.xcassets */,
 				B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */,
@@ -346,6 +352,7 @@
 			files = (
 				B5E9DA1A1BA3975C0063A787 /* LoginViewController.swift in Sources */,
 				88ECA5AA1BA482A8007E04AE /* MainViewController.swift in Sources */,
+				88ECA5AF1BA4A07B007E04AE /* BillViewController.swift in Sources */,
 				42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */,
 				88ECA5A41BA481DE007E04AE /* Board.swift in Sources */,
 				B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */,
@@ -354,6 +361,7 @@
 				42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */,
 				425038F01BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
 				425038F31BA48739003E66ED /* Constants.swift in Sources */,
+				88ECA5AD1BA4A068007E04AE /* BillTableViewCell.swift in Sources */,
 				42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,

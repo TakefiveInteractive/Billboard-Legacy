@@ -32,7 +32,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let offsetX = scrollView.contentOffset.x
-        let page = Int( offsetX / UIScreen.mainScreen().bounds.width )
+        let page = Int( offsetX / (UIScreen.mainScreen().bounds.width/2) )
         segmentControl.selectedSegmentIndex = page
     }
     
