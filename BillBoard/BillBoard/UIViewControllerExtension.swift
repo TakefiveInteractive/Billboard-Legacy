@@ -24,7 +24,6 @@ extension UIViewController{
         loginViewController.didMoveToParentViewController(self)
         self.presentViewController(loginViewController, animated: true, completion: nil)
         loginViewController.view!.alpha = 0
-        self.view.addSubview(loginViewController.view)
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             loginViewController.view!.alpha = 1
         })
