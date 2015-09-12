@@ -20,12 +20,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
-//        if !UserInfo.isLogin(){
-//            displayLoginViewController()
-//        }
+        if !UserInfo.isLogin(){
+            displayLoginViewController()
+        }
         
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
