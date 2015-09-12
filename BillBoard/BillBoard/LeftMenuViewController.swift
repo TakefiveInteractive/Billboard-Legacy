@@ -15,7 +15,7 @@ class LeftMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userName.text="\(UserInfo.userName)"
+        userName.text="\(UserInfo.getUserName())"
 
         // Do any additional setup after loading the view.
     }
