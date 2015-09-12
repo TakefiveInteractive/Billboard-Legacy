@@ -20,6 +20,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        if !UserInfo.isLogin(){
+            displayLoginViewController()
+        }
+        
     }
 
     override func viewWillAppear(animated: Bool) {
