@@ -38,6 +38,7 @@ class UserManager: NSObject {
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
+                        
                         if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
                             
                             let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
@@ -45,8 +46,9 @@ class UserManager: NSObject {
                             if result["accessToken"] != nil && result["accessToken"]!.count > 0 {
                                 self.userDefault.setObject(result["accessToken"], forKey: "userToken")
                                 self.userDefault.synchronize()
+                                completion(succ: true, error: result["error"] as! String, result: nil)
                             }else{
-                                
+                                completion(succ: false, error: result["error"] as! String, result: nil)
                             }
                         }
                     }
