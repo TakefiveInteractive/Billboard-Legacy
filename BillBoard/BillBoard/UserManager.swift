@@ -17,8 +17,8 @@ var UserInfo: UserManager = UserManager()
 class UserManager: NSObject {
     
     let userDefault = NSUserDefaults.standardUserDefaults()
-
-    var userName = ""
+    
+    var userName = NSUserDefaults.standardUserDefaults().objectForKey("userName") as! String
     
     lazy var isLogin: (() -> (Bool)) = {
         if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
@@ -34,11 +34,8 @@ class UserManager: NSObject {
             if JSON != nil{
                 let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
 
-                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == "" && result["accessToken"] != nil && result["accessToken"]!.count > 0 {
-                    userDefault.setObject(result["accessToken"], forKey: "userToken")
-                    userDefault.synchronize()
-                    completion(succ: true, error: "", result: SwiftyJSON.JSON(JSON!).dictionaryObject)
-                    
+                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == ""{
+                    loginHandler(SwiftyJSON.JSON(JSON!).dictionaryObject!, completion: completion)
                 }else{
                     completion(succ: false, error: SwiftyJSON.JSON(JSON!)["error"].string!, result: SwiftyJSON.JSON(JSON!).dictionaryObject)
                 }
@@ -56,6 +53,16 @@ class UserManager: NSObject {
         }
     }
     
+    func loginHandler(result: [String: AnyObject],completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
+        if result["accessToken"] != nil && result["accessToken"]!.count > 0 {
+            userDefault.setObject(result["accessToken"], forKey: "userToken")
+            userDefault.synchronize()
+            completion(succ: true, error: "", result: result)
+        }else{
+            completion(succ: false, error: "token empty", result: result)
+        }
+    }
+    
     func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
@@ -63,6 +70,7 @@ class UserManager: NSObject {
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
+                    self.userName = result["name"]! as! String
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
@@ -80,6 +88,9 @@ class UserManager: NSObject {
     
     func logout(){
         userDefault.setObject("", forKey: "userID")
+        userDefault.setObject("", forKey: "userName")
+        userDefault.setObject("", forKey: "userToken")
+
         userDefault.synchronize()
     }
     
