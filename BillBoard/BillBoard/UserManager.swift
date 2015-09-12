@@ -18,28 +18,24 @@ class UserManager: NSObject {
     
     let userDefault:NSUserDefaults
 
-    var userName:String? {
-        get {
-            return self.userName ?? ""
-        }
-        set {
-            self.userName = newValue
-        }
-    }
-    var userEmail:String? {
-        get {
-            return self.userEmail ?? ""
-        }
-        set {
-            self.userEmail = newValue
+    func getUserName()->String{
+        if let str = userDefault.objectForKey("userName") as? String{
+            return str
+        }else{
+            return ""
         }
     }
     
+    func getUserEmail()->String{
+        if let str = userDefault.objectForKey("userEmail") as? String{
+            return str
+        }else{
+            return ""
+        }
+    }
+
     override init() {
        userDefault = NSUserDefaults.standardUserDefaults()
-        super.init()
-        userName = self.userDefault.objectForKey("userName") as? String
-        userEmail = self.userDefault.objectForKey("userEmail") as? String
 
     }
     
@@ -60,9 +56,7 @@ class UserManager: NSObject {
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
-                    self.userName = result["name"]! as? String
                     self.userDefault.setObject(result["email"]!, forKey: "userEmail")
-                    self.userEmail = result["email"]! as? String
                     println(result)
                     self.userDefault.synchronize()
                     
@@ -95,7 +89,7 @@ class UserManager: NSObject {
     
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
-            FBSDKGraphRequest(graphPath: "/me/email", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
                     println(result)
                 }
