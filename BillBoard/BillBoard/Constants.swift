@@ -8,5 +8,5 @@
 
 import Foundation
 
-let ServerAddress = ""
+let ServerAddress = "http://hl0.co:8080/"
 let ServerVersion = "v1/"

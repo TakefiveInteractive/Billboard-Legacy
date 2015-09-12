@@ -34,6 +34,14 @@ class UserManager: NSObject {
             return ""
         }
     }
+    
+    func getUserPortrait()->String{
+        if let str = userDefault.objectForKey("userPortrait") as? String{
+            return str
+        }else{
+            return ""
+        }
+    }
 
     override init() {
        userDefault = NSUserDefaults.standardUserDefaults()
@@ -53,12 +61,12 @@ class UserManager: NSObject {
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 self.getFriends()
-            
+            //println(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!)
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
                     self.userDefault.setObject(result["name"]!, forKey: "userName")
                     self.userDefault.setObject(result["email"]!, forKey: "userEmail")
-                    println(result)
+                    self.userDefault.setObject(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!, forKey: "userProfile")
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
@@ -88,11 +96,10 @@ class UserManager: NSObject {
     
     func getFriends(){
     
-        
         if (FBSDKAccessToken.currentAccessToken() != nil){
-            FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "/me/taggable_friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
-                    println(result)
+                    //println(result)
                 }
             })
         }
