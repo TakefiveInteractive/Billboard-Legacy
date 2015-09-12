@@ -9,16 +9,16 @@
 import Foundation
 import CoreData
 
-class BillGroup: NSManagedObject {
+class Board: NSManagedObject {
 
     @NSManaged var billNum: NSNumber
-    @NSManaged var id: NSNumber
+    @NSManaged var id: String
     @NSManaged var isActive: NSNumber
     @NSManaged var name: String
     @NSManaged var grantBillList: NSSet
     @NSManaged var peopleList: NSSet
 
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, billNum: NSNumber, id: NSNumber, isActive: NSNumber, name: String, group: BillGroup, billList: [String: AnyObject], peopleList: [String: AnyObject]){
+    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, billNum: NSNumber, id: String, isActive: NSNumber, name: String, group: Board, billList: [String: AnyObject], peopleList: [String: AnyObject]){
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         self.billNum = billNum
         self.id = id

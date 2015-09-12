@@ -4,15 +4,18 @@
 target 'BillBoard' do
 pod 'Venmo-iOS-SDK', '~>1.3'
 pod 'Spring'
-# 现在默认 swift 2.0会爆炸  不要改回来
-pod 'Alamofire', '~>1.3'
+pod 'Alamofire', '~>1.3' # 现在默认 swift 2.0会爆炸  不要改回来
 pod 'SwiftyJSON'
+pod 'FBSDKCoreKit', '~> 4.4.0'
+pod 'FBSDKLoginKit', '~> 4.4.0'
+pod 'FBSDKShareKit', '~> 4.4.0'
+
 pod 'TextFieldEffects'
 pod 'MJRefresh'
 pod 'DZNEmptyDataSet'
 pod 'JTSImageViewController'
 pod 'SDWebImage'
-pod 'SnapKit'
+pod 'SnapKit', '~> 0.13.0'
 pod 'WYInteractiveTransitions'
 pod 'ZFRippleButton'
 pod 'CRToast'

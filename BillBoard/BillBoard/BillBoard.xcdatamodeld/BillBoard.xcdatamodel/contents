@@ -2,30 +2,32 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bill" representedClassName="PRODUCT_MODULE_NAME.Bill" syncable="YES">
         <attribute name="amountList" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paid" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillGroup" inverseName="grantBillList" inverseEntity="BillGroup" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Board" inverseName="grantBillList" inverseEntity="Board" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="billList" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="BillGroup" representedClassName="PRODUCT_MODULE_NAME.BillGroup" syncable="YES">
+    <entity name="Board" representedClassName="PRODUCT_MODULE_NAME.BillGroup" syncable="YES">
         <attribute name="billNum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="grantBillList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bill" inverseName="group" inverseEntity="Bill" syncable="YES"/>
         <relationship name="peopleList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="group" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="PRODUCT_MODULE_NAME.Person" syncable="YES">
-        <attribute name="totalAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="totalAmount" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="billList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bill" inverseName="owner" inverseEntity="Bill" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillGroup" inverseName="peopleList" inverseEntity="BillGroup" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Board" inverseName="peopleList" inverseEntity="Board" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bill" positionX="-36" positionY="27" width="128" height="135"/>
-        <element name="BillGroup" positionX="-281" positionY="-213" width="128" height="133"/>
-        <element name="Person" positionX="-488" positionY="27" width="128" height="120"/>
+        <element name="Bill" positionX="-29" positionY="-27" width="128" height="163"/>
+        <element name="Board" positionX="-317" positionY="-108" width="128" height="133"/>
+        <element name="Person" positionX="-326" positionY="153" width="128" height="118"/>
     </elements>
 </model>

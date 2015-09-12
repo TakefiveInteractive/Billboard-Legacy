@@ -16,14 +16,18 @@ class Bill: NSManagedObject {
     @NSManaged var photo: NSData
     @NSManaged var time: NSDate
     @NSManaged var title: String
-    @NSManaged var group: BillGroup
+    @NSManaged var paid: NSNumber
+    @NSManaged var id: String
+    @NSManaged var group: Board
     @NSManaged var owner: Person
 
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, title: String, time: NSDate, amountList:[Person: Double], group: BillGroup, owner: Person, photo: NSData){
+    //
+    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, title: String, time: NSDate, amountList:[Person: Double], group: Board, owner: Person, photo: NSData, paid: NSNumber){
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         self.title = title
         self.time = time
         self.photo = photo
+        self.paid = paid
         self.amountList = amountList
     }
     
