@@ -12,8 +12,9 @@ class LeftMenuViewController: UIViewController {
 
     @IBOutlet weak var SettingsButton: UIButton!
     @IBOutlet weak var GetHelpButton: UIButton!
-    @IBOutlet weak var userEmail: UILabel!
+    
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
