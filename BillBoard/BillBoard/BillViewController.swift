@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
+import MJRefresh
+import Spring
 
-class BillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var bills = [Bill]()
+    var billNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshTable")
+        header.lastUpdatedTimeLabel.hidden = true
+        header.setTitle("Pull down to refresh", forState: MJRefreshStateIdle)
+        header.setTitle("Release to refresh", forState: MJRefreshStatePulling)
+        header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)
+        self.tableView.header = header
+        self.tableView.header.beginRefreshing()
+    }
+    
+    func refreshTable() {
+        delay(1, { () -> () in
+            self.tableView.header.endRefreshing()
+            self.billNumber++
+            self.tableView.reloadData()
+        })
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return billNumber
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -28,6 +49,30 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "box_image")
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let textAttributes = [
+            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+            NSFontAttributeName: UIFont(name: "Helvetica", size: 17)!,
+        ]
+        return NSAttributedString(string: "No Transection", attributes: textAttributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let textAttributes = [
+            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+            NSFontAttributeName: UIFont(name: "Helvetica", size: 14)!,
+        ]
+        return NSAttributedString(string: "There is no record around, please press the add button below to start your first bill.", attributes: textAttributes)
+    }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
+        return true
     }
     
 }

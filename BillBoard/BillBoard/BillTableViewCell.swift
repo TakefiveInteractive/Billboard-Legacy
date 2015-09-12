@@ -11,6 +11,7 @@ import Spring
 
 class BillTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backView: SpringView!
     @IBOutlet weak var paidImageView: DesignableImageView!
     @IBOutlet weak var ownedImageView: DesignableImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,13 +21,33 @@ class BillTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backView.animation = "zoomIn"
+        backView.animate()
+        updateBalanceLabelColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateBalanceLabelColor() {
+        let greenColor = UIColor(hex: "39AE54")
+        let redColor = UIColor(hex: "E24E35")
+        if let balance = balanceLabel.text {
+            if balance.lowercaseString.rangeOfString("-") != nil {
+                balanceLabel.textColor = redColor
+                dollarSignLabel.textColor = redColor
+            } else {
+                balanceLabel.textColor = greenColor
+                dollarSignLabel.textColor = greenColor
+            }
+        }
+    }
+    
+    func configure(bill: Bill) {
+        
     }
 
 }

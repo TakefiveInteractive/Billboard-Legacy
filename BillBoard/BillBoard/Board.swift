@@ -18,16 +18,18 @@ class Board: NSManagedObject {
     @NSManaged var grantBillList: NSSet
     @NSManaged var peopleList: NSSet
 
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, billNum: NSNumber, id: String, isActive: NSNumber, name: String, group: Board, billList: [String: AnyObject], peopleList: [String: AnyObject]){
+    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, billNum: NSNumber, id: String, isActive: NSNumber, name: String){
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         self.billNum = billNum
         self.id = id
         self.isActive = isActive
         self.name = name
         
-        for people in peopleList{
-            //construct people
-        }
+    }
+    
+    func getPeopleList(){
+        
+        let info = [String: AnyObject]()
         
     }
     
