@@ -29,9 +29,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
-        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, scrollViewHeight)
-
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width * 2, scrollViewHeight)
+        scrollContentView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 2, UIScreen.mainScreen().bounds.height)
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
