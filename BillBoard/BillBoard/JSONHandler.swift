@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class JSONHandler: NSObject {
     static func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?)->Bool{
-        if error == nil{
+        if response?.statusCode == 200{
             //succ
             if JSON != nil{
                 let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
