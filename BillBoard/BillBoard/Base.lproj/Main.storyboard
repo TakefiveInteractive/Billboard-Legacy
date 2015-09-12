@@ -182,19 +182,31 @@
                                     <constraint firstItem="Pic-hv-STL" firstAttribute="top" secondItem="DpX-jF-DVc" secondAttribute="bottom" constant="4" id="sWa-ve-RfK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CnE-ko-IOy">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CnE-ko-IOy">
                                 <rect key="frame" x="0.0" y="560" width="375" height="107"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQd-98-WLt">
-                                        <rect key="frame" x="25" y="39" width="114" height="22"/>
-                                        <state key="normal" title="Setting" image="setting">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQd-98-WLt">
+                                        <rect key="frame" x="25" y="30" width="114" height="22"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Settings" image="setting">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S1-gW-mg5">
+                                        <rect key="frame" x="25" y="60" width="114" height="22"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Get Help" image="GetHelp">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.61176470589999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="qQd-98-WLt" firstAttribute="leading" secondItem="CnE-ko-IOy" secondAttribute="leading" constant="25" id="1Kw-eZ-GnI"/>
                                     <constraint firstAttribute="height" constant="107" id="1nF-Np-Tls"/>
+                                    <constraint firstItem="3S1-gW-mg5" firstAttribute="leading" secondItem="CnE-ko-IOy" secondAttribute="leading" constant="25" id="Kp7-M1-IVS"/>
+                                    <constraint firstItem="3S1-gW-mg5" firstAttribute="top" secondItem="qQd-98-WLt" secondAttribute="bottom" constant="8" id="cvo-kT-u5u"/>
+                                    <constraint firstAttribute="bottom" secondItem="3S1-gW-mg5" secondAttribute="bottom" constant="25" id="vFp-IB-FKS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -418,6 +430,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GetHelp" width="13" height="13"/>
         <image name="ham_menu" width="21" height="21"/>
         <image name="setting" width="15" height="15"/>
     </resources>
