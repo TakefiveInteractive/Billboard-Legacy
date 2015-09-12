@@ -28,32 +28,6 @@ class UserManager: NSObject {
         }
     }
     
-    func jsonResponse (response: NSHTTPURLResponse?, JSON: AnyObject?, error: NSError?)->Bool{
-        if error == nil{
-            //succ
-            if JSON != nil{
-                let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
-
-                if SwiftyJSON.JSON(JSON!)["error"] == nil || SwiftyJSON.JSON(JSON!)["error"].string! == "" {
-                    return true
-                    
-                }else{
-                    return false
-                }
-            }else{
-                return true
-            }
-            
-        }else{
-            //error
-            if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-                return false
-            }else{
-                return false
-            }
-        }
-    }
-    
     func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
         if (FBSDKAccessToken.currentAccessToken() != nil){
@@ -64,7 +38,7 @@ class UserManager: NSObject {
                     self.userDefault.synchronize()
                     
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
-                        if self.jsonResponse(response, JSON: JSON, error: error){
+                        if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
                             
                             let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
 

@@ -11,6 +11,8 @@
 		425038F11BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */; };
 		425038F31BA48739003E66ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F21BA48739003E66ED /* Constants.swift */; };
 		425038F41BA48739003E66ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425038F21BA48739003E66ED /* Constants.swift */; };
+		42826EE01BA4B1470083A4F0 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */; };
+		42826EE11BA4B1470083A4F0 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */; };
 		42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
@@ -56,6 +58,7 @@
 		34D13A52F94F7D07FD055FF1 /* Pods-BillBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillBoard/Pods-BillBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		425038F21BA48739003E66ED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
 		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		42FE23E01BA3FB9D007D7B13 /* BillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillManager.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 				88ECA5AE1BA4A07B007E04AE /* BillViewController.swift */,
 				B5E9DA191BA3975C0063A787 /* LoginViewController.swift */,
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
+				42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
 				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
@@ -354,6 +358,7 @@
 				88ECA5AA1BA482A8007E04AE /* MainViewController.swift in Sources */,
 				88ECA5AF1BA4A07B007E04AE /* BillViewController.swift in Sources */,
 				42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */,
+				42826EE01BA4B1470083A4F0 /* JSONHandler.swift in Sources */,
 				88ECA5A41BA481DE007E04AE /* Board.swift in Sources */,
 				B5E9DA151BA3975C0063A787 /* AppDelegate.swift in Sources */,
 				880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */,
@@ -378,6 +383,7 @@
 				42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */,
 				42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */,
 				88ECA5A81BA4825A007E04AE /* LeftMenuViewController.swift in Sources */,
+				42826EE11BA4B1470083A4F0 /* JSONHandler.swift in Sources */,
 				42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
 				88ECA5A51BA48250007E04AE /* Board.swift in Sources */,
 				425038F11BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
