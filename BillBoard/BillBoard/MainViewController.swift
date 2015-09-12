@@ -19,6 +19,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,15 +33,19 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollContentView.addSubview(red)
         scrollContentView.addSubview(blue)
     }
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         let offsetX = scrollView.contentOffset.x
-        
+        let page = Int( offsetX / UIScreen.mainScreen().bounds.width )
+        segmentControl.selectedSegmentIndex = page
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func segmentControlDidChanged(segmentControl: UISegmentedControl) {
+        if segmentControl.selectedSegmentIndex == 0 {
+            self.scrollView.setContentOffset(CGPointZero, animated: true)
+        } else {
+            self.scrollView.setContentOffset(CGPointMake(UIScreen.mainScreen().bounds.width, 0), animated: true)
+        }
     }
 
     @IBAction func menuButtonDidPressed(sender: UIButton) {
