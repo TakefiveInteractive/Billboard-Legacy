@@ -23,10 +23,6 @@ class Person: NSManagedObject {
         self.userName = userName
         self.userId = userId
         self.totalAmount = totalAmount
-        
-        for bill in billList{
-            //construct bill
-        }
     }
     
     func addBill(){
