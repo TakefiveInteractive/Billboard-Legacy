@@ -31,7 +31,7 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
     func refreshTable() {
         delay(1, { () -> () in
             self.tableView.header.endRefreshing()
-            self.billNumber++
+            self.billNumber += random() % 5
             self.tableView.reloadData()
         })
     }

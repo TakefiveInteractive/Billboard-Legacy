@@ -13,6 +13,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var totalAmount: UITextField!
     @IBOutlet weak var theTitle: UITextField!
     @IBOutlet weak var lowerView: UIView!
+    @IBOutlet weak var openView: UIView!
     
     var totalAmountNum: Int = 0
     private var isToggled = false
@@ -21,6 +22,21 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         totalAmount.delegate = self
         theTitle.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let numOfPeople = 7
+        let scrollView = UIScrollView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, openView.bounds.height))
+        openView.addSubview(scrollView)
+        let padding: CGFloat = 24
+        scrollView.contentSize = CGSizeMake(padding * CGFloat(numOfPeople) + padding, openView.bounds.height)
+        for i in 0..<numOfPeople {
+            let avatar = UIImageView()
+            avatar.frame = CGRectMake(CGFloat(i) * padding + padding, 16, 66, 66)
+            avatar.layer.cornerRadius = avatar.bounds.width / 2
+            scrollView.addSubview(avatar)
+        }
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -45,7 +61,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     @IBAction func toggleDidPressed(sender: UIButton) {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             if self.isToggled {
-                self.lowerView.transform = CGAffineTransformMakeTranslation(0, 200)
+                self.lowerView.transform = CGAffineTransformMakeTranslation(0, 100)
             } else {
                 self.lowerView.transform = CGAffineTransformIdentity
             }
