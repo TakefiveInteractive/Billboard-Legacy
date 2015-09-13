@@ -13,7 +13,7 @@ import Spring
 
 class BalanceViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,14 @@ class BalanceViewController: UIViewController {
         header.setTitle("Pull down to refresh", forState: MJRefreshStateIdle)
         header.setTitle("Release to refresh", forState: MJRefreshStatePulling)
         header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)
-        self.tableView.header = header
-        self.tableView.header.beginRefreshing()
+        self.table.header = header
+        self.table.header.beginRefreshing()
     }
     
     func refreshTable() {
         delay(1, { () -> () in
-            self.tableView.header.endRefreshing()
-            self.tableView.reloadData()
+            self.table.header.endRefreshing()
+            self.table.reloadData()
         })
     }
     
@@ -38,13 +38,13 @@ class BalanceViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("balanceTableViewCell", forIndexPath: indexPath) as? BalanceTableViewCell
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "balanceTableViewCell")
-        return cell
+        let cell = self.table.dequeueReusableCellWithIdentifier("balanceTableViewCell", forIndexPath: indexPath) as? BalanceTableViewCell
+//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "balanceTableViewCell")
+        return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.table.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
