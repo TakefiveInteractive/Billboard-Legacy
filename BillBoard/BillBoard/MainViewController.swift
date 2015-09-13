@@ -51,7 +51,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             bill.transform = CGAffineTransformMakeTranslation(x, 0)
             balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width + x, 0)
             segmentControl.selectedSegmentIndex = 1
-        }else if  !displayLeft && x > 0 {
+        } else if  !displayLeft && x > 0 {
             bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width + x, 0)
             balance.transform = CGAffineTransformMakeTranslation(x, 0)
             segmentControl.selectedSegmentIndex = 0
@@ -65,7 +65,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func segmentControlDidChanged(segmentControl: UISegmentedControl) {
-        if displayLeft{
+        if displayLeft {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(0, 0)
@@ -74,7 +74,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                     self.bill.userInteractionEnabled = true
                     self.balance.userInteractionEnabled = true
             })
-        }else{
+        } else {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(0, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
