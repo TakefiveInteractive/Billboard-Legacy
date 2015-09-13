@@ -15,6 +15,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var contentView: UIView!
     
+    var displayLeft = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
@@ -30,23 +32,39 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
 //        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width * 2, scrollViewHeight)
         contentView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 2, UIScreen.mainScreen().bounds.height)
-        
-//        let billViewController = storyboard?.instantiateViewControllerWithIdentifier("BillViewController") as! UIViewController
-//        addChildViewController(billViewController as UIViewController)
-//        billViewController.didMoveToParentViewController(self)
-//        let billView = billViewController.view
-//        scrollContentView.addSubview(billView)
+        var panGesture = UIPanGestureRecognizer(target: self, action: "dragged:")
+        contentView.addGestureRecognizer(panGesture)
     }
-
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if scrollView == self.scrollView {
-//            let offsetX = scrollView.contentOffset.x
-//            let page = Int( offsetX / (UIScreen.mainScreen().bounds.width/2) )
-//            segmentControl.selectedSegmentIndex = page
-//        }
-//    }
     
-    
+    func dragged(gesture: UIPanGestureRecognizer){
+        
+        var x = gesture.translationInView(self.view).x
+        
+        if displayLeft && x < 0{
+            contentView.transform = CGAffineTransformMakeTranslation(x, 0)
+        }else if  !displayLeft && x > 0{
+            contentView.transform = CGAffineTransformMakeTranslation(-self.view.frame.width + x, 0)
+        }
+        
+        if (gesture.state == UIGestureRecognizerState.Cancelled || gesture.state == UIGestureRecognizerState.Failed || gesture.state == UIGestureRecognizerState.Ended) && (!displayLeft && x > 0 || displayLeft && x < 0){
+            contentView.userInteractionEnabled = false
+            if displayLeft{
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.contentView.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
+                }, completion: { (finish) -> Void in
+                        self.displayLeft = false
+                        self.contentView.userInteractionEnabled = true
+                })
+            }else{
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.contentView.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: { (finish) -> Void in
+                        self.displayLeft = true
+                        self.contentView.userInteractionEnabled = true
+                })
+            }
+        }
+    }
     
     func segmentControlDidChanged(segmentControl: UISegmentedControl) {
         if segmentControl.selectedSegmentIndex == 0 {
