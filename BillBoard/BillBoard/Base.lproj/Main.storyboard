@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -330,7 +331,7 @@
             </objects>
             <point key="canvasLocation" x="788.5" y="440.5"/>
         </scene>
-        <!--Add Bill View Controller-->
+        <!--Add Bill-->
         <scene sceneID="Zdd-j2-odB">
             <objects>
                 <viewController id="ZKB-qf-t3m" customClass="AddBillViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,13 +342,72 @@
                     <view key="view" contentMode="scaleToFill" id="AI5-rd-VrP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Ky-J0d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-lD-N3p">
+                                        <rect key="frame" x="20" y="56.5" width="335" height="2"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="NMk-FB-NtK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yem-EL-avs">
+                                        <rect key="frame" x="20" y="15" width="335" height="36.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRk-tu-45q">
+                                        <rect key="frame" x="25" y="78.5" width="200" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="H4n-lg-HfQ"/>
+                                            <constraint firstAttribute="height" constant="40" id="gRM-PD-CAD"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.42745098039215684" green="0.70196078431372544" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="SvF-lD-N3p" secondAttribute="centerX" id="5oD-G3-pYq"/>
+                                    <constraint firstAttribute="width" secondItem="gzf-Ky-J0d" secondAttribute="height" multiplier="375:112" id="Bhv-yC-z9h"/>
+                                    <constraint firstItem="SvF-lD-N3p" firstAttribute="leading" secondItem="gzf-Ky-J0d" secondAttribute="leading" constant="20" id="LDh-FH-e7V"/>
+                                    <constraint firstItem="vRk-tu-45q" firstAttribute="leading" secondItem="gzf-Ky-J0d" secondAttribute="leading" constant="25" id="WOg-Ox-03J"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yem-EL-avs" secondAttribute="trailing" constant="20" id="aQa-nF-Gd7"/>
+                                    <constraint firstAttribute="trailing" secondItem="SvF-lD-N3p" secondAttribute="trailing" constant="20" id="cCb-yg-eY8"/>
+                                    <constraint firstItem="vRk-tu-45q" firstAttribute="top" secondItem="SvF-lD-N3p" secondAttribute="bottom" constant="20" id="dfD-sa-dGZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="SvF-lD-N3p" secondAttribute="centerY" multiplier="1.3" id="e9P-tu-KO4"/>
+                                    <constraint firstItem="Yem-EL-avs" firstAttribute="top" secondItem="gzf-Ky-J0d" secondAttribute="top" constant="15" id="fw6-ui-DqB"/>
+                                    <constraint firstItem="SvF-lD-N3p" firstAttribute="top" secondItem="Yem-EL-avs" secondAttribute="bottom" constant="5" id="mQb-6t-Qjs"/>
+                                    <constraint firstAttribute="width" secondItem="gzf-Ky-J0d" secondAttribute="height" multiplier="75:30" id="uhy-Y0-mZf"/>
+                                    <constraint firstItem="Yem-EL-avs" firstAttribute="leading" secondItem="gzf-Ky-J0d" secondAttribute="leading" constant="20" id="upR-JC-Xka"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bhv-yC-z9h"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gzf-Ky-J0d" firstAttribute="top" secondItem="HJS-hq-79k" secondAttribute="bottom" id="9zC-pe-Nmo"/>
+                            <constraint firstItem="gzf-Ky-J0d" firstAttribute="leading" secondItem="AI5-rd-VrP" secondAttribute="leading" id="T5g-lR-jpy"/>
+                            <constraint firstAttribute="trailing" secondItem="gzf-Ky-J0d" secondAttribute="trailing" id="qSS-od-2rc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Bill" id="gKY-dH-qey"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="theTitle" destination="vRk-tu-45q" id="Dih-Hk-bhA"/>
+                        <outlet property="totalAmount" destination="vRk-tu-45q" id="IdA-0x-aCq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgq-LO-SZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.5" y="-1153.5"/>
+            <point key="canvasLocation" x="771.5" y="-1244.5"/>
         </scene>
         <!--Bill View Controller-->
         <scene sceneID="9Je-M2-TJ4">

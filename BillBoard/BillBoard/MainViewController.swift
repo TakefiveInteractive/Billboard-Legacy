@@ -10,7 +10,7 @@ import UIKit
 import Spring
 import WYInteractiveTransitions
 
-class MainViewController: UIViewController, UIScrollViewDelegate {
+class MainViewController: UIViewController, UIScrollViewDelegate{
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
