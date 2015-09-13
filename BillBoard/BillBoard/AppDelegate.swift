@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
         self.window?.rootViewController = self.revealController
         self.window?.makeKeyAndVisible()
         
-        UIApplication.sharedApplication().openURL(NSURL(string: "venmo://")!)
+//        UIApplication.sharedApplication().openURL(NSURL(string: "venmo://")!)
  
         return true
     }
