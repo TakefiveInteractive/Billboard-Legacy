@@ -78,15 +78,13 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
                     self.userDefault.setObject(result["email"]!, forKey: "userEmail")
                     self.userDefault.setObject(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!, forKey: "userProfile")
                     self.userDefault.synchronize()
-                    
 
-                    
-                    Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
+                    Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token], encoding: ParameterEncoding.JSON).responseJSON { (_, response, JSON, error) in
                         
                         if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
                             
                             let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
-                            if result["accessToken"] != nil && result["accessToken"] as! String != "" {
+                            if result["fbToken"] != nil && result["accessToken"] as! String != "" {
                                 self.userDefault.setObject(result["accessToken"], forKey: "userToken")
                                 self.userDefault.synchronize()
                                 completion(succ: true, error: "", result: nil)
