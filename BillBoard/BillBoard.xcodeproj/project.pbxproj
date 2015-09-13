@@ -126,6 +126,7 @@
 		886262B71BA5B99300227E6E /* Avator_98.png in Resources */ = {isa = PBXBuildFile; fileRef = 886262531BA5B99300227E6E /* Avator_98.png */; };
 		886262B81BA5B99300227E6E /* Avator_99.png in Resources */ = {isa = PBXBuildFile; fileRef = 886262541BA5B99300227E6E /* Avator_99.png */; };
 		886262B91BA5BC3C00227E6E /* FakeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* FakeDataManager.swift */; };
+		886262BB1BA5C5A300227E6E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886262BA1BA5C5A300227E6E /* StringExtension.swift */; };
 		887B56191BA53E1C00EDE3B5 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */; };
 		88ECA5A41BA481DE007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
 		88ECA5A51BA48250007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
@@ -273,6 +274,7 @@
 		886262521BA5B99300227E6E /* Avator_97.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_97.png; sourceTree = "<group>"; };
 		886262531BA5B99300227E6E /* Avator_98.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_98.png; sourceTree = "<group>"; };
 		886262541BA5B99300227E6E /* Avator_99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_99.png; sourceTree = "<group>"; };
+		886262BA1BA5C5A300227E6E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		88ECA5A31BA481DE007E04AE /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		88ECA5A91BA482A8007E04AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				42826EE21BA4B2A00083A4F0 /* BoardManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */,
+				886262BA1BA5C5A300227E6E /* StringExtension.swift */,
 				88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */,
 				88ECA5B21BA4E250007E04AE /* BalanceTableViewCell.swift */,
 				887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */,
@@ -798,6 +801,7 @@
 				886261DA1BA5ACC200227E6E /* FakeDataManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
+				886262BB1BA5C5A300227E6E /* StringExtension.swift in Sources */,
 				887B56191BA53E1C00EDE3B5 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
