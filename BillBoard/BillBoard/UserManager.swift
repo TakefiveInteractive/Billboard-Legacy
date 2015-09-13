@@ -61,6 +61,7 @@ class UserManager: NSObject {
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 self.getFriends()
+                self.getMutualFriends()
             //println(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!)
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
@@ -100,6 +101,17 @@ class UserManager: NSObject {
             FBSDKGraphRequest(graphPath: "/me/taggable_friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
                     //println(result)
+                }
+            })
+        }
+        
+    }
+    
+    func getMutualFriends(){
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKGraphRequest(graphPath: "/me/friends", parameters: ["fields":"name,installed,first_name"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if error == nil{
+                    println(result)
                 }
             })
         }
