@@ -43,7 +43,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         }else{
             (cell as! BoardCell).billName.text = "Kedan Li"//BoardInfo.boardList[indexPath.item].name
             (cell as! BoardCell).peopleList.text = "Ted, Kedan, Yu Wang"
-            (cell as! BoardCell).amount.text = "$ 63.00"//"$ \(BoardInfo.boardList[indexPath.item].peopleList)"
+            (cell as! BoardCell).amount.text = "$ 234.49"//"$ \(BoardInfo.boardList[indexPath.item].peopleList)"
             (cell as! BoardCell).peopleNum.text = "3"
             (cell as! BoardCell).peopleIcon.image = MockDataManager.groupFake()
         }
