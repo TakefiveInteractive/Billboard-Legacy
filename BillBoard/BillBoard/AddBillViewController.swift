@@ -68,7 +68,6 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
             if textField.text.length < 2{
                 textField.text = "$ "
             }
-            
             if textField.text.length >= 3 && Array(textField.text)[textField.text.length - 3] == "." && string != ""{
                 return false
             }

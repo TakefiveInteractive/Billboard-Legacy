@@ -17,17 +17,26 @@ class Board: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var grantBillList: NSSet
     @NSManaged var peopleList: NSSet
+    
+    @NSManaged var billIds: [String]
 
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, billNum: NSNumber, id: String, isActive: NSNumber, name: String){
+    convenience init
+        (entity: NSEntityDescription,
+        context: NSManagedObjectContext,
+        billNum: NSNumber,
+        id: String,
+        isActive: NSNumber,
+        name: String,
+        billIds: [String]){
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         self.billNum = billNum
         self.id = id
         self.isActive = isActive
         self.name = name
+        self.billIds = billIds
     }
     
     func getPeopleList(){
-        
         let info = [String: AnyObject]()
         
     }

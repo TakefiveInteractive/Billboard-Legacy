@@ -50,6 +50,8 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         
         table.dataSource = self
         table.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
 
