@@ -24,10 +24,10 @@ class BillTableViewCell: UITableViewCell {
         backView.animation = "zoomIn"
         backView.animate()
         
-        paidImageView.image = DataManager.randomAvatar()
-        ownedImageView.image = DataManager.randomAvatar()
-        titleLabel.text = DataManager.titleGenerate()
-        balanceLabel.text = NSString(format: "%.02f", DataManager.randomDecimal()) as String
+        paidImageView.image = MockDataManager.randomAvatar()
+        ownedImageView.image = MockDataManager.randomAvatar()
+        titleLabel.text = MockDataManager.titleGenerate()
+        balanceLabel.text = NSString(format: "%.02f", MockDataManager.randomDecimal()) as String
         updateBalanceLabelColor()
     }
 

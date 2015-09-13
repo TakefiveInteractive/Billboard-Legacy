@@ -18,9 +18,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var balance: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var billOut: UIView!
+    @IBOutlet weak var billOutButton: UIButton!
     
     private var displayLeft = true
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.billOut.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
@@ -100,5 +101,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     @IBAction func menuButtonDidPressed(sender: UIBarButtonItem) {
         revealController.showViewController(revealController.leftViewController)
+    }
+    @IBAction func billOutConfirm(sender: AnyObject) {
+        displayConfirmBillViewController()
     }
 }

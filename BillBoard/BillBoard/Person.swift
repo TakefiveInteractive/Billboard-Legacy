@@ -17,16 +17,6 @@ class Person: NSManagedObject {
     @NSManaged var billList: NSSet
     @NSManaged var group: Board
     
-    convenience init(entity: NSEntityDescription, context: NSManagedObjectContext, userId: String, totalAmount: NSNumber, userName: String, group: Board, billList: [String: AnyObject]){
-        self.init(entity: entity, insertIntoManagedObjectContext: context)
-        self.group = group
-        self.userName = userName
-        self.userId = userId
-        self.totalAmount = totalAmount
-    }
-    
-    func addBill(){
-        
-    }
+
     
 }

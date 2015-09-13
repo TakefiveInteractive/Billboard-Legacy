@@ -45,7 +45,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             (cell as! BoardCell).peopleList.text = "Ted, Kedan, Yu Wang"
             (cell as! BoardCell).amount.text = "$ 63.00"//"$ \(BoardInfo.boardList[indexPath.item].peopleList)"
             (cell as! BoardCell).peopleNum.text = "3"
-            (cell as! BoardCell).peopleIcon.image = DataManager.groupFake()
+            (cell as! BoardCell).peopleIcon.image = MockDataManager.groupFake()
         }
         return cell as! UITableViewCell
     }
@@ -84,7 +84,6 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     @IBAction func GetHelpButton(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://www.tk5.us")!)
-
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
