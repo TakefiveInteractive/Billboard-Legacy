@@ -34,7 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         button.userInteractionEnabled = true
         self.view.addSubview(button)
         
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

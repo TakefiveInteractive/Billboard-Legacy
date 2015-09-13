@@ -26,6 +26,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         balance.alpha = 0
         if !UserInfo.isLogin(){
             displayLoginViewController()
+        }else{
+            BoardInfo.requestForBoardList()
         }
     }
     
