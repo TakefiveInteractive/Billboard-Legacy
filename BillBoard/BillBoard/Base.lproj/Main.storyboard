@@ -488,6 +488,28 @@
             </objects>
             <point key="canvasLocation" x="788.5" y="440.5"/>
         </scene>
+        <!--Confirm View Controller-->
+        <scene sceneID="sMU-0J-Mf7">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="nhp-7Q-OaA" customClass="ConfirmViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lbc-Te-KrW"/>
+                        <viewControllerLayoutGuide type="bottom" id="rXp-7m-7TW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D3L-bn-GbD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="bZk-2h-H4o" kind="unwind" identifier="quit" unwindAction="unwindToViewController:" id="UFc-g8-3Az"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dc8-ly-4aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bZk-2h-H4o" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1024.5" y="1385.5"/>
+        </scene>
         <!--Add Bill-->
         <scene sceneID="Zdd-j2-odB">
             <objects>

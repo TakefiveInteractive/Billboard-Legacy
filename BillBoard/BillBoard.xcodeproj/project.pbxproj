@@ -15,6 +15,8 @@
 		42826EE11BA4B1470083A4F0 /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */; };
 		42826EE31BA4B2A00083A4F0 /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42826EE21BA4B2A00083A4F0 /* BoardManager.swift */; };
 		42826EE41BA4B2A00083A4F0 /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42826EE21BA4B2A00083A4F0 /* BoardManager.swift */; };
+		428A7F691BA5C57D0005B4D9 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A7F681BA5C57D0005B4D9 /* ConfirmViewController.swift */; };
+		428A7F6A1BA5C57D0005B4D9 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A7F681BA5C57D0005B4D9 /* ConfirmViewController.swift */; };
 		42FE23D81BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
@@ -166,6 +168,7 @@
 		425038F21BA48739003E66ED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
 		42826EE21BA4B2A00083A4F0 /* BoardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
+		428A7F681BA5C57D0005B4D9 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		42FE23E31BA4017F007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
@@ -481,6 +484,7 @@
 				88ECA5B81BA50DF1007E04AE /* AddBillViewController.swift */,
 				B5E9DA191BA3975C0063A787 /* LoginViewController.swift */,
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
+				428A7F681BA5C57D0005B4D9 /* ConfirmViewController.swift */,
 				42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
 				42826EE21BA4B2A00083A4F0 /* BoardManager.swift */,
@@ -789,6 +793,7 @@
 				880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */,
 				42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */,
 				88ECA5B11BA4DF15007E04AE /* BalanceViewController.swift in Sources */,
+				428A7F691BA5C57D0005B4D9 /* ConfirmViewController.swift in Sources */,
 				42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */,
 				88ECA5B91BA50DF1007E04AE /* AddBillViewController.swift in Sources */,
 				425038F01BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
@@ -809,6 +814,7 @@
 				88ECA5A61BA48253007E04AE /* AppDelegate.swift in Sources */,
 				88ECA5AB1BA482A8007E04AE /* MainViewController.swift in Sources */,
 				42FE23E81BA40180007D7B13 /* Person.swift in Sources */,
+				428A7F6A1BA5C57D0005B4D9 /* ConfirmViewController.swift in Sources */,
 				42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */,
 				42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */,
 				88ECA5A81BA4825A007E04AE /* LeftMenuViewController.swift in Sources */,
