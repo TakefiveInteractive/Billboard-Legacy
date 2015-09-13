@@ -21,7 +21,7 @@ class FakeDataManager: NSObject {
     }
     
     class func randomAvatar() -> UIImage {
-        let randomNumber = arc4random_uniform(10)
+        let randomNumber = arc4random_uniform(100)
         return UIImage(named: "Avator_\(randomNumber)")!
     }
     
@@ -36,7 +36,8 @@ class FakeDataManager: NSObject {
             "Et dolore magna aliqua",
             "Ut enim ad minim veniam"
         ]
-        let randomNumber = Int(arc4random_uniform(7))
+        let cnt = UInt32(titles.count)
+        let randomNumber = Int(arc4random_uniform(cnt))
         return titles[randomNumber]
     }
     
