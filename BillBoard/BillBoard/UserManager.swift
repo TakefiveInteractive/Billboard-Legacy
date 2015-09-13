@@ -57,7 +57,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     lazy var isLogin: (() -> (Bool)) = {
-        if self.userDefault.objectForKey("userId") != nil && count(self.userDefault.objectForKey("userId") as! String) > 0 && self.userDefault.objectForKey("userToken") != nil && count(self.userDefault.objectForKey("userToken") as! String) > 0 {
+        if self.userDefault.objectForKey("userID") != nil && self.userDefault.objectForKey("userID") as! String != "" && self.userDefault.objectForKey("userToken") != nil && self.userDefault.objectForKey("userToken") as! String != "" {
             return true
         }else{
             return false
@@ -144,7 +144,9 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     func logout(){
-        userDefault.setObject("", forKey: "userID")
+        userDefault.setObject(nil, forKey: "userID")
+        userDefault.setObject(nil, forKey: "userID")
+
         userDefault.synchronize()
     }
     

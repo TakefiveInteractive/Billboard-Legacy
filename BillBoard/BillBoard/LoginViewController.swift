@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        //exit()
+        exit()
     }
     
     func exit(){
