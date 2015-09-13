@@ -273,6 +273,7 @@
                                         <connections>
                                             <outlet property="amount" destination="ZPL-4z-4KI" id="eQ4-ba-bAM"/>
                                             <outlet property="billName" destination="Ub3-Tg-gI6" id="Jky-dq-yoX"/>
+                                            <outlet property="littlePeopleIcon" destination="vd4-pJ-bVM" id="cqH-BQ-sL7"/>
                                             <outlet property="peopleIcon" destination="wMT-vN-1ho" id="7qB-rs-Y24"/>
                                             <outlet property="peopleList" destination="RbQ-tG-DfG" id="Dzc-pI-8mm"/>
                                             <outlet property="peopleNum" destination="7Sk-ax-IYC" id="N8D-IW-S5B"/>

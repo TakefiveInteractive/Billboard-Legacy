@@ -31,6 +31,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             (cell as! BoardCell).amount.alpha = 0//"$ \(BoardInfo.boardList[indexPath.item].peopleList)"
             (cell as! BoardCell).peopleNum.alpha = 0
             (cell as! BoardCell).peopleIcon.alpha = 0
+            (cell as! BoardCell).littlePeopleIcon.alpha = 0
             (cell as! BoardCell).writeIcon.alpha = 1
         }else{
             (cell as! BoardCell).billName.text = "Kedan Li"//BoardInfo.boardList[indexPath.item].name
@@ -82,6 +83,7 @@ class BoardCell: UITableViewCell {
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var peopleNum: UILabel!
     @IBOutlet weak var billName: UILabel!
+    @IBOutlet weak var littlePeopleIcon: UIImageView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
