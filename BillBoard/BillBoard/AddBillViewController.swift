@@ -85,6 +85,10 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     }
     
     func updateBalance() {
+        if totalAmount.text == "" || totalAmount == nil {
+            totalAmount.becomeFirstResponder()
+            totalAmount.text = "$ 0"
+        }
         if let balance = totalAmount.text {
             let startIndex = advance(balance.startIndex, 2)
             let range = startIndex..<balance.endIndex
