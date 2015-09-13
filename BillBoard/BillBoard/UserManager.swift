@@ -14,12 +14,18 @@ import FBSDKShareKit
 
 var UserInfo: UserManager = UserManager()
 
+let userIDKey = "userID"
+let userNameKey = "userName"
+let userTokenKey = "userToken"
+let userEmailKey = "userEmail"
+let userPortraitKey = "userPortrait"
+
 class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     
     let userDefault:NSUserDefaults
 
     func getUserName()->String{
-        if let str = userDefault.objectForKey("userName") as? String{
+        if let str = userDefault.objectForKey(userNameKey) as? String{
             return str
         }else{
             return ""
@@ -27,7 +33,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     func getUserToken()->String{
-        if let str = userDefault.objectForKey("userToken") as? String{
+        if let str = userDefault.objectForKey(userTokenKey) as? String{
             return str
         }else{
             return ""
@@ -35,7 +41,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     func getUserEmail()->String{
-        if let str = userDefault.objectForKey("userEmail") as? String{
+        if let str = userDefault.objectForKey(userEmailKey) as? String{
             return str
         }else{
             return ""
@@ -43,7 +49,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     func getUserPortrait()->String{
-        if let str = userDefault.objectForKey("userPortrait") as? String{
+        if let str = userDefault.objectForKey(userPortraitKey) as? String{
             return str
         }else{
             return ""
@@ -55,7 +61,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     lazy var isLogin: (() -> (Bool)) = {
-        if self.userDefault.objectForKey("userID") != nil && self.userDefault.objectForKey("userID") as! String != "" && self.userDefault.objectForKey("userToken") != nil && self.userDefault.objectForKey("userToken") as! String != "" {
+        if self.userDefault.objectForKey(userIDKey) != nil && self.userDefault.objectForKey(userIDKey) as! String != "" && self.userDefault.objectForKey(userTokenKey) != nil && self.userDefault.objectForKey(userTokenKey) as! String != "" {
             return true
         }else{
             return false
@@ -71,10 +77,10 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
 
             //println(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!)
                 if error == nil{
-                    self.userDefault.setObject(result["id"]!, forKey: "userID")
-                    self.userDefault.setObject(result["name"]!, forKey: "userName")
-                    self.userDefault.setObject(result["email"]!, forKey: "userEmail")
-                    self.userDefault.setObject(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!, forKey: "userProfile")
+                    self.userDefault.setObject(result["id"]!, forKey: userIDKey)
+                    self.userDefault.setObject(result["name"]!, forKey: userNameKey)
+                    self.userDefault.setObject(result["email"]!, forKey: userEmailKey)
+                    self.userDefault.setObject(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!, forKey: userPortraitKey)
                     self.userDefault.synchronize()
 
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token], encoding: ParameterEncoding.JSON).responseJSON { (_, response, JSON, error) in
@@ -129,8 +135,6 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
         
     }
     
-
-    
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
         
     }
@@ -140,9 +144,11 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     }
     
     func logout(){
-        userDefault.setObject(nil, forKey: "userID")
-        userDefault.setObject(nil, forKey: "userID")
-
+        userDefault.setObject(nil, forKey: userIDKey)
+        userDefault.setObject(nil, forKey: userEmailKey)
+        userDefault.setObject(nil, forKey: userNameKey)
+        userDefault.setObject(nil, forKey: userTokenKey)
+        userDefault.setObject(nil, forKey: userPortraitKey)
         userDefault.synchronize()
     }
     

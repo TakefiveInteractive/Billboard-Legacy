@@ -410,6 +410,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logout:" destination="3ZQ-eg-Cyh" eventType="touchUpInside" id="bUs-nu-Ta9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S1-gW-mg5">
                                         <rect key="frame" x="25" y="46" width="190" height="22"/>
@@ -456,6 +459,8 @@
                     <connections>
                         <outlet property="GetHelpButton" destination="3S1-gW-mg5" id="fZs-6l-UBq"/>
                         <outlet property="SettingsButton" destination="3S1-gW-mg5" id="MzZ-NO-baL"/>
+                        <outlet property="icon" destination="eMA-5Y-cLT" id="LJv-S0-uEL"/>
+                        <outlet property="logout" destination="uAu-Sa-EsG" id="IoW-AJ-lep"/>
                         <outlet property="table" destination="UYB-rI-lqV" id="0rG-Kh-BrX"/>
                         <outlet property="userEmail" destination="Pic-hv-STL" id="9cz-Ql-bjQ"/>
                         <outlet property="userName" destination="DpX-jF-DVc" id="z87-wU-8j4"/>
@@ -468,7 +473,7 @@
         <!--Login View Controller-->
         <scene sceneID="wsK-yZ-v2u">
             <objects>
-                <viewController storyboardIdentifier="ConfirmViewController" id="97c-QE-BQJ" customClass="LoginViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="97c-QE-BQJ" customClass="LoginViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xtg-Ko-J1C"/>
                         <viewControllerLayoutGuide type="bottom" id="dJs-Fq-A8z"/>
@@ -491,7 +496,7 @@
         <!--Confirm View Controller-->
         <scene sceneID="sMU-0J-Mf7">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="nhp-7Q-OaA" customClass="ConfirmViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmViewController" id="nhp-7Q-OaA" customClass="ConfirmViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lbc-Te-KrW"/>
                         <viewControllerLayoutGuide type="bottom" id="rXp-7m-7TW"/>
