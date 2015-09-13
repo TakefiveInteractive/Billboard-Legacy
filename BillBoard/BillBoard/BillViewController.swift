@@ -28,6 +28,7 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
         header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)
         self.tableView.header = header
         self.tableView.header.beginRefreshing()
+        self.tableView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 300)
     }
     
     func refreshTable() {
