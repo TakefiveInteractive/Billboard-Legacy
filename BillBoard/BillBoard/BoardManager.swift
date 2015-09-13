@@ -38,7 +38,6 @@ class BoardManager: NSObject {
     }
     
     
-    
     func addBoard(info: [String: AnyObject]){
         Board(entity: boardObject, context: managedContext, billNum: NSNumber(int: info["billNum"] as! Int32), id: info["id"] as! String, isActive:  NSNumber(bool: info["isActive"] as! Bool), name: info["name"] as! String)
     }
