@@ -27,7 +27,6 @@ class Board: NSManagedObject {
     }
     
     func getPeopleList(){
-        
         let info = [String: AnyObject]()
         
     }
