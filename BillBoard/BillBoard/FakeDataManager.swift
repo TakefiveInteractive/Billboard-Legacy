@@ -27,14 +27,18 @@ class FakeDataManager: NSObject {
     
     class func titleGenerate() -> String {
         let titles: [String] = [
-            "Airbnb payments",
-            "MHacks driving expense",
-            "Lorem ipsum dolor sit amet",
-            "Consectetur adipiscing elit",
-            "Sed do eiusmod tempor",
-            "Incididunt ut labore",
-            "Et dolore magna aliqua",
-            "Ut enim ad minim veniam"
+            "MHacks",
+            "HackIllinois",
+            "Road Trip",
+            "Walmart",
+            "Dinner at Redlob",
+            "Airbnb",
+            "Rental",
+            "Sakanaya",
+            "App Store",
+            "Utility Fee",
+            "Parking",
+            "Food"
         ]
         let cnt = UInt32(titles.count)
         let randomNumber = Int(arc4random_uniform(cnt))
