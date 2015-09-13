@@ -16,11 +16,13 @@ class BalanceTableViewCell: UITableViewCell {
     @IBOutlet weak var dollarSignLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var backView: SpringView!
+    @IBOutlet weak var marginColorImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backView.animation = "fadeIn"
         backView.animate()
+        updateBalanceLabelColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,9 +38,13 @@ class BalanceTableViewCell: UITableViewCell {
             if balance.lowercaseString.rangeOfString("-") != nil {
                 balanceLabel.textColor = redColor
                 dollarSignLabel.textColor = redColor
+                dollarSignLabel.text = "Owes"
+                marginColorImageView.backgroundColor = redColor
             } else {
                 balanceLabel.textColor = greenColor
                 dollarSignLabel.textColor = greenColor
+                dollarSignLabel.text = "Is owed"
+                marginColorImageView.backgroundColor = greenColor
             }
         }
     }
