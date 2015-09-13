@@ -66,6 +66,10 @@ class BoardManager: NSObject {
         return fetchedBoard
     }
     
+    func requestBillsInBoard(Board: String) -> [Bill] {
+        return []
+    }
+    
     private func addBoard(info: [String: AnyObject]) {
         let board = Board(
             entity: boardObject,
@@ -73,7 +77,8 @@ class BoardManager: NSObject {
             billNum: NSNumber(integer: (info["bills"] as! NSArray).count),
             id: info["id"] as! String,
             isActive:  NSNumber(bool: info["isActive"] as! Bool),
-            name: info["name"] as! String
+            name: info["name"] as! String,
+            billIds: (info["bills"] as! NSArray) as! [String]
         )
         boardList.append(board)
     }
