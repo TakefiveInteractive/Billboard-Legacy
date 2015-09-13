@@ -23,6 +23,7 @@ extension UIViewController{
         var loginViewController: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("loginView")!
         addChildViewController(loginViewController as! UIViewController)
         loginViewController.didMoveToParentViewController(self)
+        self.view.addSubview(loginViewController.view)
         loginViewController.view!.alpha = 0
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             loginViewController.view!.alpha = 1
