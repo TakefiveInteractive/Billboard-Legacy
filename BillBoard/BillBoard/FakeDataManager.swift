@@ -29,4 +29,13 @@ class FakeDataManager: NSObject {
         let randomNumber = Int(arc4random_uniform(7))
         return titles[randomNumber]
     }
-}
+    
+    class func randomDecimal() -> Double {
+        let random = Double(randomBetweenNumbers(-1000.22, secondNum: 1000.22))
+        let formatter = NSNumberFormatter()
+        return Double(random)
+    }
+    
+    class func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    }}
