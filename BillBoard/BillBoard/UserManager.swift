@@ -84,7 +84,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
                         if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
                             
                             let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
-                            if result["fbToken"] != nil && result["accessToken"] as! String != "" {
+                            if result["accessToken"] != nil && result["accessToken"] as! String != "" {
                                 self.userDefault.setObject(result["accessToken"], forKey: "userToken")
                                 self.userDefault.synchronize()
                                 completion(succ: true, error: "", result: nil)
