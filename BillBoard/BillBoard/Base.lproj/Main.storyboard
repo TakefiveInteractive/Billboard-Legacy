@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OUd-K8-ozx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xYU-Mm-rMQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="UI0-2z-H2d"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-Xe-xJw">
                                 <rect key="frame" x="0.0" y="0.0" width="750" height="667"/>
                                 <subviews>
@@ -62,13 +56,57 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-tf-PM5" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="297" y="589" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="2i5-hx-Wd4"/>
+                                    <constraint firstAttribute="width" secondItem="FSR-tf-PM5" secondAttribute="height" id="yao-6v-AFb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-6" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="-2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addButtonDidPresssed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ytt-Vt-whE"/>
+                                    <segue destination="ZKB-qf-t3m" kind="show" id="Tjc-Qa-vFJ"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xYU-Mm-rMQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UI0-2z-H2d"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FSR-tf-PM5" secondAttribute="trailing" constant="30" id="0io-Ei-8Xh"/>
                             <constraint firstAttribute="trailing" secondItem="xYU-Mm-rMQ" secondAttribute="trailing" id="9zo-Xw-AO5"/>
                             <constraint firstItem="Ts4-Xe-xJw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="DnF-IA-ePR"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ts4-Xe-xJw" secondAttribute="bottom" id="Fuy-xJ-78j"/>
                             <constraint firstItem="xYU-Mm-rMQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="eaA-4g-Od3"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="FSR-tf-PM5" secondAttribute="bottom" constant="30" id="huu-R0-4OX"/>
                             <constraint firstItem="Ts4-Xe-xJw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="sTk-Ls-67N"/>
                             <constraint firstItem="xYU-Mm-rMQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xIF-Iz-Vjt"/>
                         </constraints>
@@ -91,6 +129,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addButton" destination="FSR-tf-PM5" id="w22-Wu-eoR"/>
                         <outlet property="contentView" destination="Ts4-Xe-xJw" id="OZZ-GS-yQ6"/>
                         <outlet property="searchBar" destination="xYU-Mm-rMQ" id="g7e-fa-xLb"/>
                         <outlet property="segmentControl" destination="xfi-31-acr" id="Y4U-Pa-7Zy"/>
@@ -306,6 +345,25 @@
                 <exit id="uVd-4r-eNV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="788.5" y="440.5"/>
+        </scene>
+        <!--Add Bill View Controller-->
+        <scene sceneID="Zdd-j2-odB">
+            <objects>
+                <viewController id="ZKB-qf-t3m" customClass="AddBillViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJS-hq-79k"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vul-6Q-e75"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AI5-rd-VrP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgq-LO-SZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.5" y="-1153.5"/>
         </scene>
         <!--Bill View Controller-->
         <scene sceneID="9Je-M2-TJ4">

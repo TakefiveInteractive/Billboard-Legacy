@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Spring
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var addButton: UIButton!
     
     var displayLeft = true
     
@@ -68,6 +70,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                     self.contentView.userInteractionEnabled = true
             })
         }
+    }
+    
+    @IBAction func addButtonDidPresssed(sender: DesignableButton) {
+        
     }
 
     @IBAction func menuButtonDidPressed(sender: UIBarButtonItem) {
