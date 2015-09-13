@@ -49,7 +49,8 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
             scrollView.addSubview(label)
             label.textAlignment = NSTextAlignment.Center
             label.font = UIFont.systemFontOfSize(12)
-            label.text = "$ \(0.00)"
+            label.textColor = UIColor(hex: "E24E35")
+            label.text = "$ 0.00"
             peopleBalance.append(label)
         }
     }
@@ -57,8 +58,11 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     func avatarDidPressed(sender: UIButton) {
         if sender.alpha != 1 {
             sender.alpha = 1
+            peopleBalance[sender.tag].alpha = 1
         } else {
-            sender.alpha = 0.3
+            sender.alpha = 0.2
+            peopleBalance[sender.tag].text = "$ 0.00"
+            peopleBalance[sender.tag].alpha = 0.2
         }
         updateBalance()
     }
@@ -101,7 +105,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
                     count++
                 }
             }
-            for i in 0..<count {
+            for i in 0..<numOfPeople {
                 let meanNumber = number / Double(count)
                 if avatarList[i].alpha == 1 {
                     peopleBalance[i].text = NSString(format: "$ %.02f", meanNumber) as String
@@ -112,7 +116,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func toggleDidPressed(sender: UIButton) {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
-            if self.isToggled {
+            if !self.isToggled {
                 self.lowerView.transform = CGAffineTransformMakeTranslation(0, self.openView.bounds.height)
             } else {
                 self.lowerView.transform = CGAffineTransformIdentity
@@ -128,22 +132,4 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         theTitle.resignFirstResponder()
     }
     
-    /*
-    func getTotalAmountNum(){
-        let str = totalAmount.text.substringFromIndex(totalAmount.text)
-        for var index = 0; index < 3; index++ {
-            if Array(totalAmount.text)[totalAmount.text.length - 1 - index] == "." {
-                
-                Array(totalAmount.text).removeAtIndex(totalAmount.text.length - 1 - index)
-            }
-                
-        }
-    }*/
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
 }
