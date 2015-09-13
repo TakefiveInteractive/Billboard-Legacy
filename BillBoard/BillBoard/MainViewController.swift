@@ -14,7 +14,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var bill: UIView!
+    @IBOutlet weak var balance: UIView!
     @IBOutlet weak var addButton: UIButton!
     
     private var displayLeft = true
@@ -22,7 +23,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
-        
+        balance.alpha = 0
         if !UserInfo.isLogin(){
             displayLoginViewController()
         }
@@ -31,9 +32,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
-        contentView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 2, UIScreen.mainScreen().bounds.height)
-        var panGesture = UIPanGestureRecognizer(target: self, action: "dragged:")
-        contentView.addGestureRecognizer(panGesture)
+        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        bill.addGestureRecognizer(panGesture1)
+        balance.addGestureRecognizer(panGesture2)
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
+        }) { (finish) -> Void in
+            self.balance.alpha = 1
+        }
     }
     
     func dragged(gesture: UIPanGestureRecognizer){
@@ -41,15 +48,18 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         var x = gesture.translationInView(self.view).x
         
         if displayLeft && x < 0 {
-            contentView.transform = CGAffineTransformMakeTranslation(x, 0)
+            bill.transform = CGAffineTransformMakeTranslation(x, 0)
+            balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width + x, 0)
             segmentControl.selectedSegmentIndex = 1
         }else if  !displayLeft && x > 0 {
-            contentView.transform = CGAffineTransformMakeTranslation(-self.view.frame.width + x, 0)
+            bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width + x, 0)
+            balance.transform = CGAffineTransformMakeTranslation(x, 0)
             segmentControl.selectedSegmentIndex = 0
         }
         
         if (gesture.state == UIGestureRecognizerState.Cancelled || gesture.state == UIGestureRecognizerState.Failed || gesture.state == UIGestureRecognizerState.Ended) && (!displayLeft && x > 0 || displayLeft && x < 0){
-            contentView.userInteractionEnabled = false
+            bill.userInteractionEnabled = false
+            balance.userInteractionEnabled = false
             segmentControlDidChanged(segmentControl)
         }
     }
@@ -57,17 +67,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func segmentControlDidChanged(segmentControl: UISegmentedControl) {
         if displayLeft{
             UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.contentView.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
+                self.bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
+                self.balance.transform = CGAffineTransformMakeTranslation(0, 0)
                 }, completion: { (finish) -> Void in
                     self.displayLeft = false
-                    self.contentView.userInteractionEnabled = true
+                    self.bill.userInteractionEnabled = true
+                    self.balance.userInteractionEnabled = true
             })
         }else{
             UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.contentView.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.bill.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
                 }, completion: { (finish) -> Void in
                     self.displayLeft = true
-                    self.contentView.userInteractionEnabled = true
+                    self.bill.userInteractionEnabled = true
+                    self.balance.userInteractionEnabled = true
             })
         }
     }
