@@ -24,6 +24,17 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         super.viewDidLoad()
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         balance.alpha = 0
+        
+        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        bill.addGestureRecognizer(panGesture1)
+        balance.addGestureRecognizer(panGesture2)
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
+            }) { (finish) -> Void in
+                self.balance.alpha = 1
+        }
+        
         if !UserInfo.isLogin(){
             displayLoginViewController()
         }else{
@@ -34,15 +45,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
-        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
-        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
-        bill.addGestureRecognizer(panGesture1)
-        balance.addGestureRecognizer(panGesture2)
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
-        }) { (finish) -> Void in
-            self.balance.alpha = 1
-        }
+
     }
     
     func dragged(gesture: UIPanGestureRecognizer){
@@ -53,7 +56,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
             bill.transform = CGAffineTransformMakeTranslation(x, 0)
             balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width + x, 0)
             segmentControl.selectedSegmentIndex = 1
-        }else if  !displayLeft && x > 0 {
+        } else if  !displayLeft && x > 0 {
             bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width + x, 0)
             balance.transform = CGAffineTransformMakeTranslation(x, 0)
             segmentControl.selectedSegmentIndex = 0
@@ -67,7 +70,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func segmentControlDidChanged(segmentControl: UISegmentedControl) {
-        if displayLeft{
+        if displayLeft {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(0, 0)
@@ -76,7 +79,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
                     self.bill.userInteractionEnabled = true
                     self.balance.userInteractionEnabled = true
             })
-        }else{
+        } else {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(0, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)

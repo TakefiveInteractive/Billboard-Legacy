@@ -12,14 +12,15 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var totalAmount: UITextField!
     @IBOutlet weak var theTitle: UITextField!
+    @IBOutlet weak var lowerView: UIView!
     
     var totalAmountNum: Int = 0
+    private var isToggled = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         totalAmount.delegate = self
         theTitle.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -41,6 +42,23 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     
+    @IBAction func toggleDidPressed(sender: UIButton) {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            if self.isToggled {
+                self.lowerView.transform = CGAffineTransformMakeTranslation(0, 200)
+            } else {
+                self.lowerView.transform = CGAffineTransformIdentity
+            }
+        }) { (finished) -> Void in
+            self.isToggled = !self.isToggled
+        }
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        totalAmount.resignFirstResponder()
+        theTitle.resignFirstResponder()
+    }
+    
     /*
     func getTotalAmountNum(){
         let str = totalAmount.text.substringFromIndex(totalAmount.text)
@@ -58,15 +76,5 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
