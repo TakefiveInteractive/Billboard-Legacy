@@ -8,5 +8,5 @@
 
 import Foundation
 
-let ServerAddress = "http://hl0.co:8080/"
+let ServerAddress = "http://cyntifico.herokuapp.com/"
 let ServerVersion = "v1/"

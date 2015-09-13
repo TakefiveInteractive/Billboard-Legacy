@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKShareKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -22,6 +23,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.loginButton.delegate = self
         self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         self.view.addSubview(self.loginButton)
+        
+        var content = FBSDKShareLinkContent()
+        content.contentURL = NSURL(string:"https://www.takefiveinteractive.com")
+        content.contentTitle = "hahahah"
+        content.peopleIDs = ["739437159512298"]
+        var button = FBSDKShareButton()
+        button.center = CGPointMake(100,100)
+        button.shareContent = content
+        button.userInteractionEnabled = true
+        self.view.addSubview(button)
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -42,7 +55,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        exit()
+        //exit()
     }
     
     func exit(){

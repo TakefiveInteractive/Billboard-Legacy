@@ -28,11 +28,7 @@ class JSONHandler: NSObject {
             
         }else{
             //error
-            if JSON != nil && SwiftyJSON.JSON(JSON!)["error"] != nil{
-                return false
-            }else{
-                return false
-            }
+            return false
         }
     }
 }

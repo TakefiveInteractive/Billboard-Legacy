@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import FBSDKCoreKit
-
+import FBSDKShareKit
 
 var UserInfo: UserManager = UserManager()
 
-class UserManager: NSObject {
+class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     
     let userDefault:NSUserDefaults
 
@@ -58,10 +58,13 @@ class UserManager: NSObject {
     
     func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
+        self.invite()
+
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                self.getFriends()
-                self.getMutualFriends()
+                //self.getFriends()
+                //self.getMutualFriends()
+
             //println(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!)
                 if error == nil{
                     self.userDefault.setObject(result["id"]!, forKey: "userID")
@@ -70,16 +73,17 @@ class UserManager: NSObject {
                     self.userDefault.setObject(((result["picture"]! as! [String: AnyObject])["data"]! as! [String: AnyObject])["url"]!, forKey: "userProfile")
                     self.userDefault.synchronize()
                     
+
+                    
                     Alamofire.request(.POST, NSURL(string: ServerAddress + ServerVersion + "auth/login")!, parameters: ["fbToken": token]).responseJSON { (_, response, JSON, error) in
                         
                         if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
                             
                             let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
-
-                            if result["accessToken"] != nil && result["accessToken"]!.count > 0 {
+                            if result["accessToken"] != nil && result["accessToken"] as! String != "" {
                                 self.userDefault.setObject(result["accessToken"], forKey: "userToken")
                                 self.userDefault.synchronize()
-                                completion(succ: true, error: result["error"] as! String, result: nil)
+                                completion(succ: true, error: "", result: nil)
                             }else{
                                 completion(succ: false, error: result["error"] as! String, result: nil)
                             }
@@ -95,12 +99,17 @@ class UserManager: NSObject {
 
     }
     
+    var token = NSMutableArray()
+    
     func getFriends(){
     
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "/me/taggable_friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
-                    //println(result)
+                    println(result)
+                    for val in result["data"] as! [AnyObject]{
+                        self.token.addObject(val["id"] as! String)
+                    }
                 }
             })
         }
@@ -115,6 +124,26 @@ class UserManager: NSObject {
                 }
             })
         }
+        
+    }
+    
+    func invite(){
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKGraphRequest(graphPath: "/406530969553426/friendlists", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                println(error)
+                if error == nil{
+                    println("sdsd")
+                    println(result)
+                }
+            })
+        }
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+        
+    }
+    
+    func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
         
     }
     
