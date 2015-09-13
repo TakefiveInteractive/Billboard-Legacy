@@ -17,11 +17,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var bill: UIView!
     @IBOutlet weak var balance: UIView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var billOut: UIView!
     
     private var displayLeft = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.billOut.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         balance.alpha = 0
         
@@ -74,6 +76,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.billOut.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.addButton.transform = CGAffineTransformMakeTranslation(100, 0)
                 }, completion: { (finish) -> Void in
                     self.displayLeft = false
                     self.bill.userInteractionEnabled = true
@@ -83,10 +87,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.bill.transform = CGAffineTransformMakeTranslation(0, 0)
                 self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
+                self.billOut.transform = CGAffineTransformMakeTranslation(-self.view.frame.width, 0)
+                self.addButton.transform = CGAffineTransformMakeTranslation(0, 0)
                 }, completion: { (finish) -> Void in
                     self.displayLeft = true
                     self.bill.userInteractionEnabled = true
                     self.balance.userInteractionEnabled = true
+                    //display count
             })
         }
     }
