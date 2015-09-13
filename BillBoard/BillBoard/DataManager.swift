@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FakeDataManager: NSObject {
+class DataManager: NSObject {
    
     class func groupFake()->UIImage{
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(300, 300), false, 0)

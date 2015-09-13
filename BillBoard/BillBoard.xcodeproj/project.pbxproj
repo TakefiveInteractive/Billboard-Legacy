@@ -26,7 +26,7 @@
 		42FE23E71BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
 		42FE23E81BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
 		880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A70321BA472190017B8E0 /* LeftMenuViewController.swift */; };
-		886261DA1BA5ACC200227E6E /* FakeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* FakeDataManager.swift */; };
+		886261DA1BA5ACC200227E6E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* DataManager.swift */; };
 		886262551BA5B99300227E6E /* Avator_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261F11BA5B99300227E6E /* Avator_0.png */; };
 		886262561BA5B99300227E6E /* Avator_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261F21BA5B99300227E6E /* Avator_1.png */; };
 		886262571BA5B99300227E6E /* Avator_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261F31BA5B99300227E6E /* Avator_10.png */; };
@@ -127,7 +127,7 @@
 		886262B61BA5B99300227E6E /* Avator_97.png in Resources */ = {isa = PBXBuildFile; fileRef = 886262521BA5B99300227E6E /* Avator_97.png */; };
 		886262B71BA5B99300227E6E /* Avator_98.png in Resources */ = {isa = PBXBuildFile; fileRef = 886262531BA5B99300227E6E /* Avator_98.png */; };
 		886262B81BA5B99300227E6E /* Avator_99.png in Resources */ = {isa = PBXBuildFile; fileRef = 886262541BA5B99300227E6E /* Avator_99.png */; };
-		886262B91BA5BC3C00227E6E /* FakeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* FakeDataManager.swift */; };
+		886262B91BA5BC3C00227E6E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* DataManager.swift */; };
 		886262BB1BA5C5A300227E6E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886262BA1BA5C5A300227E6E /* StringExtension.swift */; };
 		887B56191BA53E1C00EDE3B5 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */; };
 		88ECA5A41BA481DE007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
@@ -176,7 +176,7 @@
 		42FE23E61BA40180007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		880A70321BA472190017B8E0 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		880A70341BA472D20017B8E0 /* BillBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BillBoard-Bridging-Header.h"; sourceTree = "<group>"; };
-		886261D91BA5ACC200227E6E /* FakeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDataManager.swift; sourceTree = "<group>"; };
+		886261D91BA5ACC200227E6E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		886261F11BA5B99300227E6E /* Avator_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_0.png; sourceTree = "<group>"; };
 		886261F21BA5B99300227E6E /* Avator_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_1.png; sourceTree = "<group>"; };
 		886261F31BA5B99300227E6E /* Avator_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_10.png; sourceTree = "<group>"; };
@@ -496,7 +496,7 @@
 				88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */,
 				88ECA5B21BA4E250007E04AE /* BalanceTableViewCell.swift */,
 				887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */,
-				886261D91BA5ACC200227E6E /* FakeDataManager.swift */,
+				886261D91BA5ACC200227E6E /* DataManager.swift */,
 				B5E9DA1B1BA3975C0063A787 /* Main.storyboard */,
 				B5E9DA1E1BA3975C0063A787 /* Images.xcassets */,
 				B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */,
@@ -803,7 +803,7 @@
 				425038F31BA48739003E66ED /* Constants.swift in Sources */,
 				42826EE31BA4B2A00083A4F0 /* BoardManager.swift in Sources */,
 				88ECA5AD1BA4A068007E04AE /* BillTableViewCell.swift in Sources */,
-				886261DA1BA5ACC200227E6E /* FakeDataManager.swift in Sources */,
+				886261DA1BA5ACC200227E6E /* DataManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
 				886262BB1BA5C5A300227E6E /* StringExtension.swift in Sources */,
@@ -827,7 +827,7 @@
 				88ECA5A51BA48250007E04AE /* Board.swift in Sources */,
 				425038F11BA484D6003E66ED /* UIViewControllerExtension.swift in Sources */,
 				425038F41BA48739003E66ED /* Constants.swift in Sources */,
-				886262B91BA5BC3C00227E6E /* FakeDataManager.swift in Sources */,
+				886262B91BA5BC3C00227E6E /* DataManager.swift in Sources */,
 				88ECA5A71BA48256007E04AE /* LoginViewController.swift in Sources */,
 				42826EE41BA4B2A00083A4F0 /* BoardManager.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,

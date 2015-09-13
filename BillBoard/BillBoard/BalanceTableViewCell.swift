@@ -23,9 +23,9 @@ class BalanceTableViewCell: UITableViewCell {
         backView.animation = "fadeIn"
         backView.animate()
         
-        avatarImageView.image = FakeDataManager.randomAvatar()
-        nameLabel.text = FakeDataManager.randomName()
-        balanceLabel.text = NSString(format: "%.02f", FakeDataManager.randomDecimal()) as String
+        avatarImageView.image = DataManager.randomAvatar()
+        nameLabel.text = DataManager.randomName()
+        balanceLabel.text = NSString(format: "%.02f", DataManager.randomDecimal()) as String
         updateBalanceLabelColor()
     }
 

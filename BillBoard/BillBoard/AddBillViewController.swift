@@ -37,7 +37,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         for i in 0..<numOfPeople {
             let avatar = UIButton()
             avatar.frame = CGRectMake(CGFloat(i) * padding + padding + CGFloat(i) * avatarWidth, 20, avatarWidth, avatarWidth)
-            avatar.setImage(FakeDataManager.randomAvatar(), forState: UIControlState.Normal)
+            avatar.setImage(DataManager.randomAvatar(), forState: UIControlState.Normal)
             avatar.layer.cornerRadius = avatar.bounds.width / 2
             avatar.tag = i
             avatar.addTarget(self, action: "avatarDidPressed:", forControlEvents: UIControlEvents.TouchUpInside)
