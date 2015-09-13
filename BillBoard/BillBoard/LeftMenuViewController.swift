@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import Spring
 
 class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var SettingsButton: UIButton!
     @IBOutlet weak var GetHelpButton: UIButton!
+    @IBOutlet weak var logout: UIButton!
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var icon: DesignableImageView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BoardInfo.boardList.count + 2
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        UserInfo.logout()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,13 +57,21 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         
         table.dataSource = self
         table.delegate = self
-        
-        
+        changeIcon()
+
         // Do any additional setup after loading the view.
+    }
+    
+    func changeIcon(){
+        if "" != UserInfo.getUserPortrait(){
+            icon.image = UIImage(data: NSData(contentsOfURL: NSURL(string: UserInfo.getUserPortrait())!)!)
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
         table.contentInset = UIEdgeInsetsZero
+        icon.layer.cornerRadius = icon.frame.width / 2
+        icon.clipsToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
