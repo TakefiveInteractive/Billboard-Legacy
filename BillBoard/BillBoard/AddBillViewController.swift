@@ -132,4 +132,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         theTitle.resignFirstResponder()
     }
     
+    @IBAction func completeButtonDidPressed(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
