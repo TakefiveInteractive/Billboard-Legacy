@@ -24,6 +24,17 @@
 		42FE23E71BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
 		42FE23E81BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
 		880A70331BA472190017B8E0 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A70321BA472190017B8E0 /* LeftMenuViewController.swift */; };
+		886261DA1BA5ACC200227E6E /* FakeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886261D91BA5ACC200227E6E /* FakeDataManager.swift */; };
+		886261E61BA5AF6E00227E6E /* Avator_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261DC1BA5AF6E00227E6E /* Avator_0.png */; };
+		886261E71BA5AF6E00227E6E /* Avator_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261DD1BA5AF6E00227E6E /* Avator_1.png */; };
+		886261E81BA5AF6E00227E6E /* Avator_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261DE1BA5AF6E00227E6E /* Avator_2.png */; };
+		886261E91BA5AF6E00227E6E /* Avator_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261DF1BA5AF6E00227E6E /* Avator_3.png */; };
+		886261EA1BA5AF6E00227E6E /* Avator_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E01BA5AF6E00227E6E /* Avator_4.png */; };
+		886261EB1BA5AF6E00227E6E /* Avator_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E11BA5AF6E00227E6E /* Avator_5.png */; };
+		886261EC1BA5AF6E00227E6E /* Avator_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E21BA5AF6E00227E6E /* Avator_6.png */; };
+		886261ED1BA5AF6E00227E6E /* Avator_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E31BA5AF6E00227E6E /* Avator_7.png */; };
+		886261EE1BA5AF6E00227E6E /* Avator_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E41BA5AF6E00227E6E /* Avator_8.png */; };
+		886261EF1BA5AF6E00227E6E /* Avator_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 886261E51BA5AF6E00227E6E /* Avator_9.png */; };
 		887B56191BA53E1C00EDE3B5 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */; };
 		88ECA5A41BA481DE007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
 		88ECA5A51BA48250007E04AE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECA5A31BA481DE007E04AE /* Board.swift */; };
@@ -70,6 +81,17 @@
 		42FE23E61BA40180007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		880A70321BA472190017B8E0 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		880A70341BA472D20017B8E0 /* BillBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BillBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		886261D91BA5ACC200227E6E /* FakeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDataManager.swift; sourceTree = "<group>"; };
+		886261DC1BA5AF6E00227E6E /* Avator_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_0.png; sourceTree = "<group>"; };
+		886261DD1BA5AF6E00227E6E /* Avator_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_1.png; sourceTree = "<group>"; };
+		886261DE1BA5AF6E00227E6E /* Avator_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_2.png; sourceTree = "<group>"; };
+		886261DF1BA5AF6E00227E6E /* Avator_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_3.png; sourceTree = "<group>"; };
+		886261E01BA5AF6E00227E6E /* Avator_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_4.png; sourceTree = "<group>"; };
+		886261E11BA5AF6E00227E6E /* Avator_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_5.png; sourceTree = "<group>"; };
+		886261E21BA5AF6E00227E6E /* Avator_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_6.png; sourceTree = "<group>"; };
+		886261E31BA5AF6E00227E6E /* Avator_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_7.png; sourceTree = "<group>"; };
+		886261E41BA5AF6E00227E6E /* Avator_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_8.png; sourceTree = "<group>"; };
+		886261E51BA5AF6E00227E6E /* Avator_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avator_9.png; sourceTree = "<group>"; };
 		887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		88ECA5A31BA481DE007E04AE /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		88ECA5A91BA482A8007E04AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +161,23 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		886261DB1BA5AF6E00227E6E /* Avator */ = {
+			isa = PBXGroup;
+			children = (
+				886261DC1BA5AF6E00227E6E /* Avator_0.png */,
+				886261DD1BA5AF6E00227E6E /* Avator_1.png */,
+				886261DE1BA5AF6E00227E6E /* Avator_2.png */,
+				886261DF1BA5AF6E00227E6E /* Avator_3.png */,
+				886261E01BA5AF6E00227E6E /* Avator_4.png */,
+				886261E11BA5AF6E00227E6E /* Avator_5.png */,
+				886261E21BA5AF6E00227E6E /* Avator_6.png */,
+				886261E31BA5AF6E00227E6E /* Avator_7.png */,
+				886261E41BA5AF6E00227E6E /* Avator_8.png */,
+				886261E51BA5AF6E00227E6E /* Avator_9.png */,
+			);
+			path = Avator;
+			sourceTree = "<group>";
+		};
 		B5E9DA061BA3975C0063A787 = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +216,11 @@
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */,
 				88ECA5AC1BA4A068007E04AE /* BillTableViewCell.swift */,
-				887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */,
 				88ECA5B21BA4E250007E04AE /* BalanceTableViewCell.swift */,
+				887B56181BA53E1C00EDE3B5 /* GroupTableViewCell.swift */,
+				886261D91BA5ACC200227E6E /* FakeDataManager.swift */,
 				B5E9DA1B1BA3975C0063A787 /* Main.storyboard */,
+				886261DB1BA5AF6E00227E6E /* Avator */,
 				B5E9DA1E1BA3975C0063A787 /* Images.xcassets */,
 				B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */,
 				B5E9DA121BA3975C0063A787 /* Supporting Files */,
@@ -299,8 +340,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E9DA1D1BA3975C0063A787 /* Main.storyboard in Resources */,
+				886261EB1BA5AF6E00227E6E /* Avator_5.png in Resources */,
+				886261ED1BA5AF6E00227E6E /* Avator_7.png in Resources */,
+				886261E81BA5AF6E00227E6E /* Avator_2.png in Resources */,
+				886261EF1BA5AF6E00227E6E /* Avator_9.png in Resources */,
 				B5E9DA221BA3975C0063A787 /* LaunchScreen.xib in Resources */,
 				B5E9DA1F1BA3975C0063A787 /* Images.xcassets in Resources */,
+				886261E61BA5AF6E00227E6E /* Avator_0.png in Resources */,
+				886261EE1BA5AF6E00227E6E /* Avator_8.png in Resources */,
+				886261E71BA5AF6E00227E6E /* Avator_1.png in Resources */,
+				886261E91BA5AF6E00227E6E /* Avator_3.png in Resources */,
+				886261EA1BA5AF6E00227E6E /* Avator_4.png in Resources */,
+				886261EC1BA5AF6E00227E6E /* Avator_6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +434,7 @@
 				425038F31BA48739003E66ED /* Constants.swift in Sources */,
 				42826EE31BA4B2A00083A4F0 /* BoardManager.swift in Sources */,
 				88ECA5AD1BA4A068007E04AE /* BillTableViewCell.swift in Sources */,
+				886261DA1BA5ACC200227E6E /* FakeDataManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
 				887B56191BA53E1C00EDE3B5 /* GroupTableViewCell.swift in Sources */,

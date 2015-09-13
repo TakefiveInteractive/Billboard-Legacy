@@ -24,6 +24,10 @@ class BillTableViewCell: UITableViewCell {
         backView.animation = "zoomIn"
         backView.animate()
         updateBalanceLabelColor()
+        
+        paidImageView.image = FakeDataManager.randomAvatar()
+        ownedImageView.image = FakeDataManager.randomAvatar()
+        titleLabel.text = FakeDataManager.titleGenerate()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
