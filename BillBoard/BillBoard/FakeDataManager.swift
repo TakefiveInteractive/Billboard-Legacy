@@ -10,6 +10,16 @@ import UIKit
 
 class FakeDataManager: NSObject {
    
+    class func groupFake()->UIImage{
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(300, 300), false, 0)
+        randomAvatar().drawInRect(CGRectMake(0, 100, 180, 180))
+        randomAvatar().drawInRect(CGRectMake(120, 100, 180, 180))
+        randomAvatar().drawInRect(CGRectMake(70, 0, 180, 180))
+        var img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img
+    }
+    
     class func randomAvatar() -> UIImage {
         let randomNumber = arc4random_uniform(10)
         return UIImage(named: "Avator_\(randomNumber)")!

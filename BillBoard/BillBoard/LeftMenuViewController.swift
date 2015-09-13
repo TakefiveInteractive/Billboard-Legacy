@@ -38,6 +38,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             (cell as! BoardCell).peopleList.text = "Ted,Kedan,Wy"
             (cell as! BoardCell).amount.text = "$ 63.00"//"$ \(BoardInfo.boardList[indexPath.item].peopleList)"
             (cell as! BoardCell).peopleNum.text = "3"
+            (cell as! BoardCell).peopleIcon.image = FakeDataManager.groupFake()
         }
         return cell as! UITableViewCell
     }
