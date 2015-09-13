@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var addButton: UIButton!
     
-    var displayLeft = true
+    private var displayLeft = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

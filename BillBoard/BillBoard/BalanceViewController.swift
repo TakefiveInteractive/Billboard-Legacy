@@ -11,7 +11,7 @@ import DZNEmptyDataSet
 import MJRefresh
 import Spring
 
-class BalanceViewController: UIViewController {
+class BalanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     @IBOutlet weak var table: UITableView!
     
