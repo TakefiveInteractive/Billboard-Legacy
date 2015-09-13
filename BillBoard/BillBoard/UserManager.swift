@@ -27,6 +27,14 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
         }
     }
     
+    func getUserToken()->String{
+        if let str = userDefault.objectForKey("userToken") as? String{
+            return str
+        }else{
+            return ""
+        }
+    }
+    
     func getUserEmail()->String{
         if let str = userDefault.objectForKey("userEmail") as? String{
             return str
@@ -58,8 +66,6 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     
     func facebookLogin(token: String, completion:(succ: Bool, error: String, result: [String: AnyObject]?) -> ()){
         
-        self.invite()
-
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 //self.getFriends()
@@ -127,17 +133,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
         
     }
     
-    func invite(){
-        if (FBSDKAccessToken.currentAccessToken() != nil){
-            FBSDKGraphRequest(graphPath: "/406530969553426/friendlists", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
-                println(error)
-                if error == nil{
-                    println("sdsd")
-                    println(result)
-                }
-            })
-        }
-    }
+
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
         
