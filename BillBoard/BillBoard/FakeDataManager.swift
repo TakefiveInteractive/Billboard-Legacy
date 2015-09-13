@@ -38,4 +38,16 @@ class FakeDataManager: NSObject {
     
     class func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
-    }}
+    }
+
+    class func randomName() -> String {
+        let names = [
+            "Ralph Hamilton","Eugene Hudson","William Powell","Stephen Bradley","Terry Duncan","Joseph Castillo","Roy Lawrence","Jean Morgan","Ruth Cole","Angela Carter"
+        ]
+        let cnt = UInt32(names.count)
+        let randomNumber = Int(arc4random_uniform(cnt))
+        return names[randomNumber]
+    }
+}
+
+

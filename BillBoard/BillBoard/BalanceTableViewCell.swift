@@ -22,8 +22,11 @@ class BalanceTableViewCell: UITableViewCell {
         super.awakeFromNib()
         backView.animation = "fadeIn"
         backView.animate()
-        updateBalanceLabelColor()
+        
         avatarImageView.image = FakeDataManager.randomAvatar()
+        nameLabel.text = FakeDataManager.randomName()
+        balanceLabel.text = NSString(format: "%.02f", FakeDataManager.randomDecimal()) as String
+        updateBalanceLabelColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

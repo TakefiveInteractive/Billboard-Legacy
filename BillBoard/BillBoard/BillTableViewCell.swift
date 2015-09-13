@@ -23,12 +23,12 @@ class BillTableViewCell: UITableViewCell {
         super.awakeFromNib()
         backView.animation = "zoomIn"
         backView.animate()
-        updateBalanceLabelColor()
         
         paidImageView.image = FakeDataManager.randomAvatar()
         ownedImageView.image = FakeDataManager.randomAvatar()
         titleLabel.text = FakeDataManager.titleGenerate()
         balanceLabel.text = NSString(format: "%.02f", FakeDataManager.randomDecimal()) as String
+        updateBalanceLabelColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -41,7 +41,7 @@ class BillTableViewCell: UITableViewCell {
         let greenColor = UIColor(hex: "39AE54")
         let redColor = UIColor(hex: "E24E35")
         if let balance = balanceLabel.text {
-            if balance.lowercaseString.rangeOfString("-") != nil {
+            if balance.rangeOfString("-") != nil {
                 balanceLabel.textColor = redColor
                 dollarSignLabel.textColor = redColor
             } else {
