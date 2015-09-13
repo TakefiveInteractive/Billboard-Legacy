@@ -72,10 +72,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @IBAction func addButtonDidPresssed(sender: DesignableButton) {
-        performSegueWithIdentifier("addSegue", sender: self)
-    }
-    
     @IBAction func menuButtonDidPressed(sender: UIBarButtonItem) {
         revealController.showViewController(revealController.leftViewController)
     }
