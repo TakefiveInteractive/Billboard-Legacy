@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import WYInteractiveTransitions
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
@@ -25,7 +26,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         if !UserInfo.isLogin(){
             displayLoginViewController()
         }
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,9 +73,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func addButtonDidPresssed(sender: DesignableButton) {
-        
+        performSegueWithIdentifier("addSegue", sender: self)
     }
-
+    
     @IBAction func menuButtonDidPressed(sender: UIBarButtonItem) {
         revealController.showViewController(revealController.leftViewController)
     }
