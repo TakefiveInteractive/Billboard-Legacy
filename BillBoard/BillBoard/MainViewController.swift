@@ -24,6 +24,17 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         super.viewDidLoad()
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         balance.alpha = 0
+        
+        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        bill.addGestureRecognizer(panGesture1)
+        balance.addGestureRecognizer(panGesture2)
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
+            }) { (finish) -> Void in
+                self.balance.alpha = 1
+        }
+        
         if !UserInfo.isLogin(){
             displayLoginViewController()
         }
@@ -32,15 +43,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let scrollViewHeight: CGFloat = UIScreen.mainScreen().bounds.height - searchBar.bounds.height - self.navigationController!.navigationBar.bounds.height
-        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
-        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
-        bill.addGestureRecognizer(panGesture1)
-        balance.addGestureRecognizer(panGesture2)
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.balance.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
-        }) { (finish) -> Void in
-            self.balance.alpha = 1
-        }
+
     }
     
     func dragged(gesture: UIPanGestureRecognizer){
