@@ -28,6 +28,7 @@ class BillTableViewCell: UITableViewCell {
         paidImageView.image = FakeDataManager.randomAvatar()
         ownedImageView.image = FakeDataManager.randomAvatar()
         titleLabel.text = FakeDataManager.titleGenerate()
+        balanceLabel.text = NSString(format: "%.02f", FakeDataManager.randomDecimal()) as String
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
