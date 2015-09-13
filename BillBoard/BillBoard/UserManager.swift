@@ -18,7 +18,6 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
     
     let userDefault:NSUserDefaults
 
-
     func getUserName()->String{
         if let str = userDefault.objectForKey("userName") as? String{
             return str
@@ -53,7 +52,6 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
 
     override init() {
        userDefault = NSUserDefaults.standardUserDefaults()
-
     }
     
     lazy var isLogin: (() -> (Bool)) = {

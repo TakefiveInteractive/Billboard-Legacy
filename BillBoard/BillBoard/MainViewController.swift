@@ -37,6 +37,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         
         if !UserInfo.isLogin(){
             displayLoginViewController()
+        }else{
+            BoardInfo.requestForBoardList()
         }
     }
     

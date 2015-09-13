@@ -9,24 +9,50 @@
 import Foundation
 import CoreData
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 var BoardInfo: BoardManager = BoardManager()
 
 class BoardManager: NSObject {
 
+    let userDefault:NSUserDefaults
     let managedContext: NSManagedObjectContext
     let boardObject: NSEntityDescription
+    
+    var boardList = [Board]()
+    
+    func getLastUpdatedTime()->NSDate{
+        return NSDate(timeIntervalSince1970: userDefault.doubleForKey("lastUpdatedTime"))
+    }
     
     override init() {
         
         managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         boardObject = NSEntityDescription.entityForName("Board", inManagedObjectContext: managedContext)!
+        userDefault = NSUserDefaults.standardUserDefaults()
         super.init()
         if !UserInfo.isLogin(){
             //remove all
         }else{
-        
+            //load from cache
+            //get from internet
         }
+    }
+    
+    func requestForBoardList(){
+        
+        let aManager = Manager.sharedInstance
+        aManager.session.configuration.HTTPAdditionalHeaders = [
+            "bb-token": UserInfo.getUserToken() ]
+        
+        Alamofire.request(.GET, NSURL(string: ServerAddress + ServerVersion + "board")!).responseJSON { (_, response, JSON, error) in
+            println(JSON)
+            if JSONHandler.jsonResponse(response, JSON: JSON, error: error){
+                let result = SwiftyJSON.JSON(JSON!).dictionaryObject!
+            }
+        }
+        
     }
     
     func getBoardList()->[Board]?{
