@@ -23,6 +23,7 @@ class BalanceTableViewCell: UITableViewCell {
         backView.animation = "fadeIn"
         backView.animate()
         updateBalanceLabelColor()
+        avatarImageView.image = FakeDataManager.randomAvatar()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -21,7 +21,6 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         totalAmount.delegate = self
         theTitle.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

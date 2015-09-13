@@ -455,13 +455,16 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                         <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -473,7 +476,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZB3-1e-m9J">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZB3-1e-m9J" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="232" width="375" height="435"/>
                                 <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -542,7 +545,6 @@
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eus-jY-YUd" customClass="DesignableImageView" customModule="Spring">
                                                                     <rect key="frame" x="8" y="13" width="44" height="44"/>
-                                                                    <color key="backgroundColor" red="0.85262101889999997" green="0.42218321559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="44" id="2WE-BD-mJ4"/>
                                                                         <constraint firstAttribute="width" constant="44" id="tlM-K2-gqr"/>
@@ -555,7 +557,6 @@
                                                                 </imageView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-eM-qEP" customClass="DesignableImageView" customModule="Spring">
                                                                     <rect key="frame" x="44" y="13" width="44" height="44"/>
-                                                                    <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="44" id="H98-9o-t9D"/>
                                                                         <constraint firstAttribute="height" constant="44" id="Vo0-HI-L9q"/>
@@ -723,7 +724,6 @@
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4eH-OZ-wXx" customClass="DesignableImageView" customModule="Spring">
                                                             <rect key="frame" x="24" y="14" width="60" height="60"/>
-                                                            <color key="backgroundColor" red="0.85262101889999997" green="0.42218321559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="WxS-h5-Pct"/>
                                                                 <constraint firstAttribute="width" constant="60" id="smh-yR-Vds"/>
