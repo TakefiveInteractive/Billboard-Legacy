@@ -96,7 +96,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.32381990551948547" green="0.60713618993759155" blue="0.84407228231430054" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="5fp-Wu-YkF" secondAttribute="centerY" id="4CA-u0-XjI"/>
                                     <constraint firstItem="5fp-Wu-YkF" firstAttribute="leading" secondItem="zSR-n2-ugX" secondAttribute="leading" constant="15" id="4Pj-dy-l3E"/>
@@ -507,8 +507,8 @@
                                         <color key="textColor" red="0.32156862749999998" green="0.61176470589999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JN-iQ-Iaq">
-                                        <rect key="frame" x="17" y="448" width="68" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JN-iQ-Iaq">
+                                        <rect key="frame" x="20" y="487" width="68" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ASd-X6-N4O"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="IC2-wJ-Oor"/>
@@ -534,8 +534,8 @@
                                             <action selector="exit:" destination="97c-QE-BQJ" eventType="touchUpInside" id="lmQ-fg-irr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-WO-QNn">
-                                        <rect key="frame" x="208" y="448" width="68" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-WO-QNn">
+                                        <rect key="frame" x="227" y="487" width="68" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="Id8-dL-ued"/>
                                             <constraint firstAttribute="height" constant="30" id="vRx-GK-Twu"/>
@@ -566,7 +566,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRV-q6-tK7">
-                                                            <rect key="frame" x="76" y="19.5" width="149" height="20"/>
+                                                            <rect key="frame" x="76" y="20" width="149" height="19.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="149" id="fC2-5z-VO2"/>
                                                             </constraints>
@@ -574,8 +574,8 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU6-ZC-LgY">
-                                                            <rect key="frame" x="207" y="19" width="85" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU6-ZC-LgY">
+                                                            <rect key="frame" x="207" y="19" width="85" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="85" id="myn-ED-hkN"/>
                                                             </constraints>
