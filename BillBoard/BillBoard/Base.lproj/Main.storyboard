@@ -33,6 +33,7 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BF9-wl-b5N">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.19664747017688194" green="0.5" blue="0.69909973604826547" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Sed-Ol-l63" kind="embed" id="7OP-yX-ftT"/>
                                 </connections>
@@ -48,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="580" width="375" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:  $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fp-Wu-YkF">
-                                        <rect key="frame" x="15" y="22.5" width="85" height="21"/>
+                                        <rect key="frame" x="15" y="23" width="85" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="67" id="VSK-vH-JPl"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="niI-CK-CjN"/>
@@ -79,14 +80,28 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hP-Ha-KEL">
+                                        <rect key="frame" x="275" y="12.5" width="80" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Gs8-qr-RgL"/>
+                                            <constraint firstAttribute="width" constant="80" id="WHI-0f-Srd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Bill Out">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17160925269999999" green="0.4927183986" blue="0.75438535210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="5fp-Wu-YkF" secondAttribute="centerY" id="4CA-u0-XjI"/>
                                     <constraint firstItem="5fp-Wu-YkF" firstAttribute="leading" secondItem="zSR-n2-ugX" secondAttribute="leading" constant="15" id="4Pj-dy-l3E"/>
+                                    <constraint firstAttribute="centerY" secondItem="3hP-Ha-KEL" secondAttribute="centerY" id="cWP-6O-UST"/>
                                     <constraint firstAttribute="height" constant="67" id="dQD-w4-fTE"/>
                                     <constraint firstItem="Hb1-AG-5Ml" firstAttribute="leading" secondItem="5fp-Wu-YkF" secondAttribute="trailing" constant="8" id="g28-AW-SCg"/>
                                     <constraint firstAttribute="centerY" secondItem="Hb1-AG-5Ml" secondAttribute="centerY" id="qrV-eO-5YO"/>
+                                    <constraint firstAttribute="trailing" secondItem="3hP-Ha-KEL" secondAttribute="trailing" constant="20" id="sEV-uC-uKy"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-tf-PM5" customClass="DesignableButton" customModule="Spring">
