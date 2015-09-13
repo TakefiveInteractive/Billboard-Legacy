@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class AddBillViewController: UIViewController, UITextFieldDelegate{
 
@@ -20,6 +21,12 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     private var peopleBalance = [UILabel]()
     private var avatarList = [UIButton]()
     let numOfPeople = 7
+    
+    var imagePicker: UIImagePickerController? = UIImagePickerController()
+    var popOverChoice: UIPopoverController? = nil
+    var shouldSaveToAlbum: Bool = false
+    @IBOutlet var imagePickerView: UIView!
+    @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,5 +141,102 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func completeButtonDidPressed(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func cameraButtonDidPressed(sender: UIButton) {
+        invokePopOver()
+    }
+    
+    // set up to invoke camera
+    func openCamera() {
+        
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+            imagePicker!.allowsEditing = false
+            imagePicker!.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePicker!.mediaTypes = [kUTTypeImage]
+            imagePicker!.cameraCaptureMode = .Photo
+            
+            shouldSaveToAlbum = true
+            popOutImagePickerView()
+        }
+            // if there's no camera detected
+        else {
+            let alertVC = UIAlertController(title: "No Camera", message: "Camera Not Detected", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alertVC.addAction(okAction)
+            presentViewController(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    // set up to invoke gallary
+    func openGallery() {
+        
+        imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            
+            shouldSaveToAlbum = false
+            popOutImagePickerView()
+            // self.presentViewController(imagePicker!, animated: true, completion: nil)
+        }
+        else {
+            //error handling
+            popOverChoice = UIPopoverController(contentViewController: imagePicker!)
+            popOverChoice!.presentPopoverFromRect(imageView.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+    }
+    
+    // handle the taken photo
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
+        returnFromImagePickerView()
+        if shouldSaveToAlbum {
+            // save image to album
+            UIImageWriteToSavedPhotosAlbum(info[UIImagePickerControllerOriginalImage] as! UIImage, nil, nil, nil)
+        }
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController!) {
+        returnFromImagePickerView()
+    }
+    
+    
+    func invokePopOver() {
+        
+        var alert:UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            self.openCamera()
+        }
+        var gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            self.openGallery()
+        }
+        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+        }
+        
+        // Add the actions
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        
+        // Present the controller
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            popOverChoice = UIPopoverController(contentViewController: alert)
+            popOverChoice!.presentPopoverFromRect(imageView.frame,inView: self.view,
+                permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
+    }
+    
+    func popOutImagePickerView() {
+        self.presentViewController(self.imagePicker!, animated: true, completion: nil)
+    }
+    
+    func returnFromImagePickerView() {
+        
     }
 }

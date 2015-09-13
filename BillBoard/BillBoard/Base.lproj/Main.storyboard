@@ -751,7 +751,28 @@
                                             <constraint firstAttribute="width" constant="44" id="4hX-68-jZI"/>
                                             <constraint firstAttribute="width" secondItem="N9V-CM-nit" secondAttribute="height" id="b3n-bK-H3n"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                        <state key="normal" title="T">
+                                            <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toggleDidPressed:" destination="ZKB-qf-t3m" eventType="touchUpInside" id="BCG-hn-zL8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0S-Om-eZF" customClass="DesignableButton" customModule="Spring">
+                                        <rect key="frame" x="247" y="100" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="ecz-Az-2hQ"/>
+                                            <constraint firstAttribute="width" secondItem="q0S-Om-eZF" secondAttribute="height" id="yln-pb-Wga"/>
+                                        </constraints>
+                                        <state key="normal" image="camera">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -760,24 +781,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="toggleDidPressed:" destination="ZKB-qf-t3m" eventType="touchUpInside" id="BCG-hn-zL8"/>
+                                            <action selector="cameraButtonDidPressed:" destination="ZKB-qf-t3m" eventType="touchUpInside" id="46n-mG-BTx"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0S-Om-eZF" customClass="DesignableButton" customModule="Spring">
-                                        <rect key="frame" x="247" y="100" width="44" height="44"/>
-                                        <color key="backgroundColor" red="0.85262101889999997" green="0.42218321559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="ecz-Az-2hQ"/>
-                                            <constraint firstAttribute="width" secondItem="q0S-Om-eZF" secondAttribute="height" id="yln-pb-Wga"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="22"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
@@ -825,7 +830,18 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZB3-1e-m9J" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="240" width="375" height="427"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-Jt-WnP">
+                                        <rect key="frame" x="8" y="8" width="359" height="411"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="XBk-Jt-WnP" firstAttribute="leading" secondItem="ZB3-1e-m9J" secondAttribute="leading" constant="8" id="Fjr-kK-YfF"/>
+                                    <constraint firstItem="XBk-Jt-WnP" firstAttribute="top" secondItem="ZB3-1e-m9J" secondAttribute="top" constant="8" id="Q3a-by-pNg"/>
+                                    <constraint firstAttribute="bottom" secondItem="XBk-Jt-WnP" secondAttribute="bottom" constant="8" id="ky0-IM-J4C"/>
+                                    <constraint firstAttribute="trailing" secondItem="XBk-Jt-WnP" secondAttribute="trailing" constant="8" id="mfO-FR-9ZN"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-vh-0bI" customClass="ZFRippleButton" customModule="ZFRippleButton">
                                 <rect key="frame" x="115" y="579" width="144" height="44"/>
@@ -876,6 +892,7 @@
                     <navigationItem key="navigationItem" title="Add Bill" id="gKY-dH-qey"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="imageView" destination="XBk-Jt-WnP" id="GZ3-GK-nEG"/>
                         <outlet property="lowerView" destination="ZB3-1e-m9J" id="2ez-XG-1EM"/>
                         <outlet property="openView" destination="bgS-7I-yf3" id="aQy-kd-qHv"/>
                         <outlet property="theTitle" destination="vRk-tu-45q" id="Dih-Hk-bhA"/>
@@ -1216,6 +1233,7 @@
     </scenes>
     <resources>
         <image name="GetHelp" width="13" height="13"/>
+        <image name="camera" width="88" height="88"/>
         <image name="ham_menu" width="21" height="21"/>
         <image name="pen" width="256" height="263"/>
         <image name="peopleIcon" width="256" height="256"/>
