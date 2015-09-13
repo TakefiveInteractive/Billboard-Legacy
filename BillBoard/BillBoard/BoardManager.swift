@@ -67,6 +67,12 @@ class BoardManager: NSObject {
     }
     
     func requestBillsInBoard(Board: String) -> [Bill] {
+        let aManager = Manager.sharedInstance
+        aManager.session.configuration.HTTPAdditionalHeaders = [
+            "bb-token": UserInfo.getUserToken() ]
+        
+        
+        
         return []
     }
     

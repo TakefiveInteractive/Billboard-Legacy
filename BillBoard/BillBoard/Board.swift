@@ -18,7 +18,7 @@ class Board: NSManagedObject {
     @NSManaged var grantBillList: NSSet
     @NSManaged var peopleList: NSSet
     
-    @NSManaged var billIds: [String]
+    @NSManaged var billIds: AnyObject
 
     convenience init
         (entity: NSEntityDescription,
