@@ -19,8 +19,6 @@
 		42FE23D91BA3BE26007D7B13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23D71BA3BE26007D7B13 /* UserManager.swift */; };
 		42FE23DE1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
 		42FE23DF1BA3C1C9007D7B13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */; };
-		42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E01BA3FB9D007D7B13 /* BillManager.swift */; };
-		42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E01BA3FB9D007D7B13 /* BillManager.swift */; };
 		42FE23E41BA4017F007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E31BA4017F007D7B13 /* Bill.swift */; };
 		42FE23E51BA4017F007D7B13 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E31BA4017F007D7B13 /* Bill.swift */; };
 		42FE23E71BA40180007D7B13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE23E61BA40180007D7B13 /* Person.swift */; };
@@ -66,7 +64,6 @@
 		42826EE21BA4B2A00083A4F0 /* BoardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
 		42FE23D71BA3BE26007D7B13 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		42FE23E01BA3FB9D007D7B13 /* BillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillManager.swift; sourceTree = "<group>"; };
 		42FE23E31BA4017F007D7B13 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		42FE23E61BA40180007D7B13 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		880A70321BA472190017B8E0 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +168,6 @@
 				880A70321BA472190017B8E0 /* LeftMenuViewController.swift */,
 				42826EDF1BA4B1470083A4F0 /* JSONHandler.swift */,
 				42FE23D71BA3BE26007D7B13 /* UserManager.swift */,
-				42FE23E01BA3FB9D007D7B13 /* BillManager.swift */,
 				42826EE21BA4B2A00083A4F0 /* BoardManager.swift */,
 				42FE23DD1BA3C1C9007D7B13 /* Reachability.swift */,
 				425038EF1BA484D6003E66ED /* UIViewControllerExtension.swift */,
@@ -380,7 +376,6 @@
 				425038F31BA48739003E66ED /* Constants.swift in Sources */,
 				42826EE31BA4B2A00083A4F0 /* BoardManager.swift in Sources */,
 				88ECA5AD1BA4A068007E04AE /* BillTableViewCell.swift in Sources */,
-				42FE23E11BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 				42FE23E71BA40180007D7B13 /* Person.swift in Sources */,
 				B5E9DA181BA3975C0063A787 /* BillBoard.xcdatamodeld in Sources */,
 			);
@@ -404,7 +399,6 @@
 				88ECA5A71BA48256007E04AE /* LoginViewController.swift in Sources */,
 				42826EE41BA4B2A00083A4F0 /* BoardManager.swift in Sources */,
 				B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */,
-				42FE23E21BA3FB9D007D7B13 /* BillManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
