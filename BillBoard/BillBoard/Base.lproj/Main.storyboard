@@ -342,11 +342,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Ky-J0d">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-7I-yf3">
+                                <rect key="frame" x="0.0" y="232" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="vrx-tz-rbR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Ky-J0d" customClass="DesignableView" customModule="Spring">
+                                <rect key="frame" x="0.0" y="64" width="375" height="168"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bill Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yem-EL-avs" customClass="JiroTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="16" y="8" width="343" height="72"/>
+                                        <rect key="frame" x="16" y="0.0" width="343" height="72"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="34f-DP-Lg5"/>
@@ -364,7 +371,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bill Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRk-tu-45q" customClass="JiroTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="16" y="80" width="200" height="72"/>
+                                        <rect key="frame" x="16" y="72" width="215" height="72"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="H4n-lg-HfQ"/>
@@ -384,44 +391,111 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="H4n-lg-HfQ"/>
                                                 <exclude reference="Uuh-qY-P2A"/>
                                                 <exclude reference="gRM-PD-CAD"/>
                                             </mask>
                                         </variation>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9V-CM-nit" customClass="DesignableButton" customModule="Spring">
+                                        <rect key="frame" x="307" y="99" width="44" height="44"/>
+                                        <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="4hX-68-jZI"/>
+                                            <constraint firstAttribute="width" secondItem="N9V-CM-nit" secondAttribute="height" id="b3n-bK-H3n"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toggleDidPressed:" destination="ZKB-qf-t3m" eventType="touchUpInside" id="BCG-hn-zL8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0S-Om-eZF" customClass="DesignableButton" customModule="Spring">
+                                        <rect key="frame" x="247" y="100" width="44" height="44"/>
+                                        <color key="backgroundColor" red="0.85262101889999997" green="0.42218321559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="ecz-Az-2hQ"/>
+                                            <constraint firstAttribute="width" secondItem="q0S-Om-eZF" secondAttribute="height" id="yln-pb-Wga"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="vRk-tu-45q" firstAttribute="top" secondItem="Yem-EL-avs" secondAttribute="bottom" id="1Ee-mq-t9g"/>
+                                    <constraint firstAttribute="bottom" secondItem="vRk-tu-45q" secondAttribute="bottom" constant="24" id="3fc-Hi-2X8"/>
                                     <constraint firstAttribute="height" constant="300" id="9lB-e1-BI0"/>
                                     <constraint firstAttribute="width" secondItem="gzf-Ky-J0d" secondAttribute="height" multiplier="375:112" id="Bhv-yC-z9h"/>
                                     <constraint firstItem="Yem-EL-avs" firstAttribute="height" secondItem="vRk-tu-45q" secondAttribute="height" id="EiF-oE-PCR"/>
+                                    <constraint firstItem="N9V-CM-nit" firstAttribute="leading" secondItem="q0S-Om-eZF" secondAttribute="trailing" constant="16" id="FcX-8t-jQN"/>
+                                    <constraint firstItem="q0S-Om-eZF" firstAttribute="centerY" secondItem="N9V-CM-nit" secondAttribute="centerY" constant="1" id="LDr-wN-MkK"/>
+                                    <constraint firstItem="q0S-Om-eZF" firstAttribute="width" secondItem="q0S-Om-eZF" secondAttribute="height" id="Sgb-o0-OSz"/>
                                     <constraint firstItem="vRk-tu-45q" firstAttribute="leading" secondItem="gzf-Ky-J0d" secondAttribute="leading" constant="25" id="WOg-Ox-03J"/>
                                     <constraint firstItem="Yem-EL-avs" firstAttribute="leading" secondItem="vRk-tu-45q" secondAttribute="leading" id="YLk-u3-Bfy"/>
+                                    <constraint firstItem="N9V-CM-nit" firstAttribute="centerY" secondItem="vRk-tu-45q" secondAttribute="centerY" constant="13" id="Z08-E9-qfD"/>
                                     <constraint firstAttribute="trailing" secondItem="Yem-EL-avs" secondAttribute="trailing" constant="16" id="aQa-nF-Gd7"/>
-                                    <constraint firstItem="Yem-EL-avs" firstAttribute="top" secondItem="gzf-Ky-J0d" secondAttribute="top" constant="8" id="fw6-ui-DqB"/>
+                                    <constraint firstAttribute="trailing" secondItem="N9V-CM-nit" secondAttribute="trailing" constant="24" id="auz-Od-BpS"/>
+                                    <constraint firstItem="q0S-Om-eZF" firstAttribute="leading" secondItem="vRk-tu-45q" secondAttribute="trailing" constant="16" id="f2e-S1-L5y"/>
+                                    <constraint firstItem="Yem-EL-avs" firstAttribute="top" secondItem="gzf-Ky-J0d" secondAttribute="top" id="fw6-ui-DqB"/>
                                     <constraint firstAttribute="width" secondItem="gzf-Ky-J0d" secondAttribute="height" multiplier="75:30" id="uhy-Y0-mZf"/>
                                     <constraint firstItem="Yem-EL-avs" firstAttribute="leading" secondItem="gzf-Ky-J0d" secondAttribute="leading" constant="16" id="upR-JC-Xka"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="9lB-e1-BI0"/>
                                         <exclude reference="Bhv-yC-z9h"/>
                                         <exclude reference="uhy-Y0-mZf"/>
                                         <exclude reference="WOg-Ox-03J"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZB3-1e-m9J">
+                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bgS-7I-yf3" firstAttribute="leading" secondItem="AI5-rd-VrP" secondAttribute="leading" id="4mR-fJ-WT5"/>
+                            <constraint firstAttribute="trailing" secondItem="ZB3-1e-m9J" secondAttribute="trailing" id="59m-NT-C2G"/>
                             <constraint firstItem="gzf-Ky-J0d" firstAttribute="top" secondItem="HJS-hq-79k" secondAttribute="bottom" id="9zC-pe-Nmo"/>
+                            <constraint firstAttribute="trailing" secondItem="bgS-7I-yf3" secondAttribute="trailing" id="NTM-4a-1FO"/>
                             <constraint firstItem="gzf-Ky-J0d" firstAttribute="leading" secondItem="AI5-rd-VrP" secondAttribute="leading" id="T5g-lR-jpy"/>
+                            <constraint firstItem="ZB3-1e-m9J" firstAttribute="leading" secondItem="AI5-rd-VrP" secondAttribute="leading" id="f2g-PH-YEY"/>
+                            <constraint firstItem="bgS-7I-yf3" firstAttribute="top" secondItem="gzf-Ky-J0d" secondAttribute="bottom" id="jGt-M9-vJB"/>
+                            <constraint firstItem="Vul-6Q-e75" firstAttribute="top" secondItem="ZB3-1e-m9J" secondAttribute="bottom" id="nzR-BZ-F5m"/>
                             <constraint firstAttribute="trailing" secondItem="gzf-Ky-J0d" secondAttribute="trailing" id="qSS-od-2rc"/>
+                            <constraint firstItem="ZB3-1e-m9J" firstAttribute="top" secondItem="gzf-Ky-J0d" secondAttribute="bottom" id="tnL-9H-y9z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Bill" id="gKY-dH-qey"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="lowerView" destination="ZB3-1e-m9J" id="2ez-XG-1EM"/>
                         <outlet property="theTitle" destination="vRk-tu-45q" id="Dih-Hk-bhA"/>
                         <outlet property="totalAmount" destination="vRk-tu-45q" id="IdA-0x-aCq"/>
                     </connections>
