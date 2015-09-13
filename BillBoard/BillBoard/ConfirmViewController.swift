@@ -30,6 +30,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("confirmcell")
         (cell as! UITableViewCell).selectionStyle = UITableViewCellSelectionStyle.None
