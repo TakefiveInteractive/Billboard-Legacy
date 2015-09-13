@@ -29,5 +29,16 @@ extension UIViewController{
             loginViewController.view!.alpha = 1
         })
     }
+    
+    func displayConfirmBillViewController(){
+        var confirmViewController: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("ConfirmViewController")!
+        addChildViewController(confirmViewController as! UIViewController)
+        confirmViewController.didMoveToParentViewController(self)
+        self.view.addSubview(confirmViewController.view)
+        confirmViewController.view!.alpha = 0
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            confirmViewController.view!.alpha = 1
+        })
+    }
 
 }

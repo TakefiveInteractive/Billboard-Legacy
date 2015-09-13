@@ -91,6 +91,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="billOutConfirm:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R0V-OV-HL9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32381990551948547" green="0.60713618993759155" blue="0.84407228231430054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -192,6 +195,7 @@
                         <outlet property="balance" destination="iTh-4r-gE5" id="Urm-K2-VJW"/>
                         <outlet property="bill" destination="BF9-wl-b5N" id="sRZ-SK-flI"/>
                         <outlet property="billOut" destination="zSR-n2-ugX" id="4HN-lS-mwK"/>
+                        <outlet property="billOutButton" destination="3hP-Ha-KEL" id="ZXO-BT-VLh"/>
                         <outlet property="searchBar" destination="xYU-Mm-rMQ" id="g7e-fa-xLb"/>
                         <outlet property="segmentControl" destination="xfi-31-acr" id="Y4U-Pa-7Zy"/>
                     </connections>
@@ -470,10 +474,10 @@
             </objects>
             <point key="canvasLocation" x="268.5" y="440.5"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="wsK-yZ-v2u">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="97c-QE-BQJ" customClass="LoginViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmViewController" id="97c-QE-BQJ" customClass="ConfirmViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xtg-Ko-J1C"/>
                         <viewControllerLayoutGuide type="bottom" id="dJs-Fq-A8z"/>
@@ -481,10 +485,113 @@
                     <view key="view" contentMode="scaleToFill" id="Sy6-IR-U3o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7DI-iW-HS5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAx-Ej-6KJ">
+                                <rect key="frame" x="40" y="100" width="295" height="497"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="omi-zy-Mew">
+                                        <rect key="frame" x="0.0" y="90" width="295" height="337"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="confirmCell" id="bvN-VV-iV7" customClass="ConfirmCell" customModule="BillBoard" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bvN-VV-iV7" id="n6Y-DA-6sS">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill $ 234.00 out?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-T1-l5V">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="90"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.61176470589999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JN-iQ-Iaq">
+                                        <rect key="frame" x="17" y="448" width="68" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ASd-X6-N4O"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="IC2-wJ-Oor"/>
+                                            <constraint firstAttribute="width" constant="68" id="X8s-Dj-wub"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="f7l-TT-f94"/>
+                                            <constraint firstAttribute="height" constant="30" id="icX-3Z-BJp"/>
+                                            <constraint firstAttribute="width" constant="68" id="lQf-Iv-nSi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.15303676869999999" blue="0.0294614929" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ASd-X6-N4O"/>
+                                                <exclude reference="IC2-wJ-Oor"/>
+                                                <exclude reference="f7l-TT-f94"/>
+                                                <exclude reference="lQf-Iv-nSi"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-WO-QNn">
+                                        <rect key="frame" x="208" y="448" width="68" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="Id8-dL-ued"/>
+                                            <constraint firstAttribute="height" constant="30" id="vRx-GK-Twu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Bill Out!">
+                                            <color key="titleColor" red="0.25882352941176473" green="0.53725490196078429" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9JN-iQ-Iaq" firstAttribute="leading" secondItem="ZAx-Ej-6KJ" secondAttribute="leading" constant="20" id="1WF-Nj-D3D"/>
+                                    <constraint firstItem="omi-zy-Mew" firstAttribute="top" secondItem="gyG-T1-l5V" secondAttribute="bottom" id="3NI-x1-4M8"/>
+                                    <constraint firstAttribute="trailing" secondItem="HI7-WO-QNn" secondAttribute="trailing" constant="20" id="8XJ-0B-zSC"/>
+                                    <constraint firstAttribute="bottom" secondItem="9JN-iQ-Iaq" secondAttribute="bottom" constant="20" id="Edg-y3-7Tc"/>
+                                    <constraint firstItem="gyG-T1-l5V" firstAttribute="top" secondItem="ZAx-Ej-6KJ" secondAttribute="top" id="Gob-vx-OXq"/>
+                                    <constraint firstAttribute="trailing" secondItem="omi-zy-Mew" secondAttribute="trailing" id="Mew-9F-Lug"/>
+                                    <constraint firstAttribute="bottom" secondItem="9JN-iQ-Iaq" secondAttribute="bottom" constant="20" id="S6R-4z-kxx"/>
+                                    <constraint firstItem="9JN-iQ-Iaq" firstAttribute="leading" secondItem="ZAx-Ej-6KJ" secondAttribute="leading" constant="20" id="cAW-J8-2cb"/>
+                                    <constraint firstItem="omi-zy-Mew" firstAttribute="top" secondItem="ZAx-Ej-6KJ" secondAttribute="top" constant="90" id="feN-88-PrI"/>
+                                    <constraint firstItem="omi-zy-Mew" firstAttribute="leading" secondItem="ZAx-Ej-6KJ" secondAttribute="leading" id="lJo-pQ-gtz"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyG-T1-l5V" secondAttribute="trailing" id="rCz-Ue-HvZ"/>
+                                    <constraint firstItem="gyG-T1-l5V" firstAttribute="leading" secondItem="ZAx-Ej-6KJ" secondAttribute="leading" id="rSt-BT-FRX"/>
+                                    <constraint firstAttribute="bottom" secondItem="HI7-WO-QNn" secondAttribute="bottom" constant="20" id="yEc-Ep-noW"/>
+                                    <constraint firstAttribute="bottom" secondItem="omi-zy-Mew" secondAttribute="bottom" constant="70" id="zOu-NY-A2E"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1WF-Nj-D3D"/>
+                                        <exclude reference="Edg-y3-7Tc"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZAx-Ej-6KJ" firstAttribute="leading" secondItem="Sy6-IR-U3o" secondAttribute="leading" constant="40" id="2VF-Pi-qg9"/>
+                            <constraint firstAttribute="trailing" secondItem="7DI-iW-HS5" secondAttribute="trailing" id="76S-eI-y5U"/>
+                            <constraint firstItem="dJs-Fq-A8z" firstAttribute="top" secondItem="ZAx-Ej-6KJ" secondAttribute="bottom" constant="70" id="Fkh-WR-j5Q"/>
+                            <constraint firstItem="7DI-iW-HS5" firstAttribute="leading" secondItem="Sy6-IR-U3o" secondAttribute="leading" id="J9i-Gl-ViV"/>
+                            <constraint firstAttribute="trailing" secondItem="ZAx-Ej-6KJ" secondAttribute="trailing" constant="40" id="Jag-l8-cCH"/>
+                            <constraint firstItem="dJs-Fq-A8z" firstAttribute="top" secondItem="7DI-iW-HS5" secondAttribute="bottom" id="Kjw-S6-O44"/>
+                            <constraint firstItem="ZAx-Ej-6KJ" firstAttribute="top" secondItem="Sy6-IR-U3o" secondAttribute="top" constant="100" id="aQx-tf-JYf"/>
+                            <constraint firstItem="7DI-iW-HS5" firstAttribute="top" secondItem="Sy6-IR-U3o" secondAttribute="top" id="vfy-7G-HnQ"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="billOutStatement" destination="gyG-T1-l5V" id="mRl-ox-sJG"/>
+                        <outlet property="billout" destination="HI7-WO-QNn" id="sy7-Or-Qqc"/>
+                        <outlet property="cancel" destination="9JN-iQ-Iaq" id="CUG-8a-d9Q"/>
+                        <outlet property="table" destination="omi-zy-Mew" id="zfo-rp-I0O"/>
                         <segue destination="uVd-4r-eNV" kind="unwind" identifier="quit" unwindAction="unwindToViewController:" id="cYq-oP-ale"/>
                     </connections>
                 </viewController>
@@ -493,10 +600,10 @@
             </objects>
             <point key="canvasLocation" x="788.5" y="440.5"/>
         </scene>
-        <!--Confirm View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="sMU-0J-Mf7">
             <objects>
-                <viewController storyboardIdentifier="ConfirmViewController" id="nhp-7Q-OaA" customClass="ConfirmViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="nhp-7Q-OaA" customClass="LoginViewController" customModule="BillBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lbc-Te-KrW"/>
                         <viewControllerLayoutGuide type="bottom" id="rXp-7m-7TW"/>
