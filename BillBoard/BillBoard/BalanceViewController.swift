@@ -18,19 +18,19 @@ class BalanceViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshTable")
-        header.lastUpdatedTimeLabel.hidden = true
-        header.setTitle("Pull down to refresh", forState: MJRefreshStateIdle)
-        header.setTitle("Release to refresh", forState: MJRefreshStatePulling)
-        header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)
-        self.table.header = header
-        self.table.header.beginRefreshing()
+        header.lastUpdatedTimeLabel!.hidden = true
+        header.setTitle("Pull down to refresh", forState: MJRefreshState.Idle)
+        header.setTitle("Release to refresh", forState: MJRefreshState.Pulling)
+        header.setTitle("Loading ...", forState: MJRefreshState.Refreshing)
+        self.table.mj_header = header
+        self.table.mj_header.beginRefreshing()
     }
     
     func refreshTable() {
-        delay(1, { () -> () in
-            self.table.header.endRefreshing()
+        delay(1) {
+            self.table.mj_header.endRefreshing()
             self.table.reloadData()
-        })
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

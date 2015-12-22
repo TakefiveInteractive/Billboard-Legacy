@@ -21,19 +21,19 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshTable")
         header.lastUpdatedTimeLabel!.hidden = true
-        header.setTitle("Pull down to refresh", forState: MJRefreshStateIdle)
-        header.setTitle("Release to refresh", forState: MJRefreshStatePulling)
-        header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)
-        self.tableView.header = header
-        self.tableView.header.beginRefreshing()
+        header.setTitle("Pull down to refresh", forState: MJRefreshState.Idle)
+        header.setTitle("Release to refresh", forState: MJRefreshState.Pulling)
+        header.setTitle("Loading ...", forState: MJRefreshState.Refreshing)
+        self.tableView.mj_header = header
+        self.tableView.mj_header.beginRefreshing()
     }
     
     func refreshTable() {
-        delay(1, { () -> () in
-            self.tableView.header.endRefreshing()
+        delay(1) {
+            self.tableView.mj_header.endRefreshing()
             self.billNumber += random() % 5
             self.tableView.reloadData()
-        })
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

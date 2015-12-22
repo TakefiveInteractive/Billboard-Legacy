@@ -114,7 +114,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "/me/taggable_friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
-                    println(result)
+                    print(result)
                     for val in result["data"] as! [AnyObject]{
                         self.token.addObject(val["id"] as! String)
                     }
@@ -128,7 +128,7 @@ class UserManager: NSObject, FBSDKAppInviteDialogDelegate{
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest(graphPath: "/me/friends", parameters: ["fields":"name,installed,first_name"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if error == nil{
-                    println(result)
+                    print(result)
                 }
             })
         }

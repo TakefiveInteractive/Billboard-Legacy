@@ -76,14 +76,14 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if textField == totalAmount{
-            if textField.text.length < 2{
+            if textField.text!.length < 2{
                 textField.text = "$ "
             }
-            if textField.text.length >= 3 && Array(textField.text)[textField.text.length - 3] == "." && string != ""{
+            if textField.text!.length >= 3 && Array(arrayLiteral: textField.text)[textField.text!.length - 3]! == "." && string != ""{
                 return false
             }
             
-            if (textField.text.characters.indexOf("." as Character) != nil) && string == "."{
+            if (textField.text!.characters.indexOf("." as Character) != nil) && string == "."{
                 return false
             }
                 
