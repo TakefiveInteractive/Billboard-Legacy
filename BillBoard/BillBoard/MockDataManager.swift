@@ -15,7 +15,7 @@ class MockDataManager: NSObject {
         randomAvatar().drawInRect(CGRectMake(0, 100, 180, 180))
         randomAvatar().drawInRect(CGRectMake(120, 100, 180, 180))
         randomAvatar().drawInRect(CGRectMake(70, 0, 180, 180))
-        var img = UIGraphicsGetImageFromCurrentImageContext()
+        let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return img
     }

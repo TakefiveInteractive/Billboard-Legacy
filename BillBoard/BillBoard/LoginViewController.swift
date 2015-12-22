@@ -38,13 +38,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println(result.description)
+        print(result.description)
         UserInfo.facebookLogin(result.token.tokenString, completion: { (succ, error, result) -> () in
             if succ{
                 //succ
                 self.exit()
             }else{
-                println(error)
+                print(error)
             }
         })
     }
@@ -53,7 +53,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         exit()
     }
     

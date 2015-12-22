@@ -19,7 +19,7 @@ var isConnectedToNetwork:(() -> Bool) = {
         SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0)).takeRetainedValue()
     }
     
-    var flags: SCNetworkReachabilityFlags = 0
+    var flags: SCNetworkReachabilityFlags = []
     if SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) == 0 {
         return false
     }

@@ -30,7 +30,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("boardcell")
+        let cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("boardcell")
         (cell as! UITableViewCell).selectionStyle = UITableViewCellSelectionStyle.None
         if indexPath.item == 1{
             (cell as! BoardCell).billName.alpha = 0
@@ -87,7 +87,7 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath)
+        print(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
 }
@@ -108,7 +108,7 @@ class BoardCell: UITableViewCell {
 
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
     }

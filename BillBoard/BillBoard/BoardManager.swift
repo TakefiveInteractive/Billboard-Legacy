@@ -59,10 +59,10 @@ class BoardManager: NSObject {
     }
     
     func getBoardList() -> [Board]? {
-        var fetchRequest = NSFetchRequest(entityName: "Board")
+        let fetchRequest = NSFetchRequest(entityName: "Board")
         fetchRequest.includesPropertyValues = true //only fetch the managedObjectID
         var error: NSError?
-        var fetchedBoard = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Board]
+        let fetchedBoard = managedContext.executeFetchRequest(fetchRequest) as? [Board]
         return fetchedBoard
     }
     
@@ -92,8 +92,11 @@ class BoardManager: NSObject {
     func saveContext() {
         //save context
         var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
+        do {
+            try managedContext.save()
+        } catch let error1 as NSError {
+            error = error1
+            print("Could not save \(error), \(error?.userInfo)")
         }
     }
     

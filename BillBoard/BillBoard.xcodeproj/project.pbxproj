@@ -149,7 +149,7 @@
 		B5E9DA1F1BA3975C0063A787 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E9DA1E1BA3975C0063A787 /* Images.xcassets */; };
 		B5E9DA221BA3975C0063A787 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E9DA201BA3975C0063A787 /* LaunchScreen.xib */; };
 		B5E9DA2E1BA3975C0063A787 /* BillBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9DA2D1BA3975C0063A787 /* BillBoardTests.swift */; };
-		ECAAA61155D4DD086613E3FF /* Pods_BillBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3207F79A6E636CE9A9CFFE46 /* Pods_BillBoard.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ECAAA61155D4DD086613E3FF /* Pods_BillBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3207F79A6E636CE9A9CFFE46 /* Pods_BillBoard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -579,6 +579,7 @@
 		B5E9DA071BA3975C0063A787 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Takefive Interactive";

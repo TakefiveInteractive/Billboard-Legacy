@@ -28,8 +28,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         segmentControl.addTarget(self, action: "segmentControlDidChanged:", forControlEvents: UIControlEvents.ValueChanged)
         balance.alpha = 0
         
-        var panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
-        var panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        let panGesture1 = UIPanGestureRecognizer(target: self, action: "dragged:")
+        let panGesture2 = UIPanGestureRecognizer(target: self, action: "dragged:")
         bill.addGestureRecognizer(panGesture1)
         balance.addGestureRecognizer(panGesture2)
         UIView.animateWithDuration(0.1, animations: { () -> Void in
@@ -53,7 +53,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     func dragged(gesture: UIPanGestureRecognizer){
         
-        var x = gesture.translationInView(self.view).x
+        let x = gesture.translationInView(self.view).x
         
         if displayLeft && x < 0 {
             bill.transform = CGAffineTransformMakeTranslation(x, 0)

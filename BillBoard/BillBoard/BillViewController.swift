@@ -20,7 +20,7 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshTable")
-        header.lastUpdatedTimeLabel.hidden = true
+        header.lastUpdatedTimeLabel!.hidden = true
         header.setTitle("Pull down to refresh", forState: MJRefreshStateIdle)
         header.setTitle("Release to refresh", forState: MJRefreshStatePulling)
         header.setTitle("Loading ...", forState: MJRefreshStateRefreshing)

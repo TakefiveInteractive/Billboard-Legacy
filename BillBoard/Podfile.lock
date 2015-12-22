@@ -1,87 +1,97 @@
 PODS:
-  - Alamofire (1.3.1)
-  - Bolts (1.2.2):
-    - Bolts/AppLinks (= 1.2.2)
-    - Bolts/Tasks (= 1.2.2)
-  - Bolts/AppLinks (1.2.2):
+  - Alamofire (3.1.4)
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.2.2)
+  - Bolts/Tasks (1.5.0)
   - CMDQueryStringSerialization (0.2.0)
-  - CRToast (0.0.8)
-  - DZNEmptyDataSet (1.7.1)
-  - FBSDKCoreKit (4.4.0):
+  - CRToast (0.0.9)
+  - DZNEmptyDataSet (1.7.2)
+  - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.4.0)
-    - FBSDKCoreKit/no-arc (= 4.4.0)
-  - FBSDKCoreKit/arc (4.4.0):
+    - FBSDKCoreKit/arc (= 4.8.0)
+    - FBSDKCoreKit/no-arc (= 4.8.0)
+  - FBSDKCoreKit/arc (4.8.0):
     - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.4.0):
+  - FBSDKCoreKit/no-arc (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.4.0):
+  - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.4.0):
+  - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
-  - JTSImageViewController (1.4)
-  - MJRefresh (2.4.9)
+  - JTSImageViewController (1.5.1)
+  - MJRefresh (3.0.7)
   - PKRevealController (2.0.6)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SnapKit (0.13.0)
+  - SnapKit (0.18.0)
   - Spring (1.0.3)
   - SSKeychain (1.2.3)
-  - SwiftyJSON (2.2.1)
-  - TextFieldEffects (0.4.2)
+  - SwiftyJSON (2.3.2)
+  - TextFieldEffects (1.1.0)
   - VENCore (3.0.1):
     - CMDQueryStringSerialization (~> 0.2.0)
   - Venmo-iOS-SDK (1.3.0):
     - CMDQueryStringSerialization (~> 0.2.0)
     - SSKeychain (~> 1.2.2)
     - VENCore (~> 3.0.0)
-  - WYInteractiveTransitions (0.2.0)
-  - ZFRippleButton (0.2)
+  - WYInteractiveTransitions (0.2.2)
+  - ZFRippleButton (0.5.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 1.3)
+  - Alamofire
   - CRToast
   - DZNEmptyDataSet
-  - FBSDKCoreKit (~> 4.4.0)
-  - FBSDKLoginKit (~> 4.4.0)
-  - FBSDKShareKit (~> 4.4.0)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - JTSImageViewController
   - MJRefresh
   - PKRevealController
   - SDWebImage
-  - SnapKit (~> 0.13.0)
-  - Spring
+  - SnapKit
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftyJSON
   - TextFieldEffects
-  - Venmo-iOS-SDK (~> 1.3)
+  - Venmo-iOS-SDK
   - WYInteractiveTransitions
   - ZFRippleButton
 
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift2
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
-  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
-  Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   CMDQueryStringSerialization: 15f9004212bbc72533bb533f63df79d90a00a7d8
-  CRToast: b087127369b4c603726ef6249d74d0d737629ab8
-  DZNEmptyDataSet: 2a398066c2bf5848f7f693fb50954b5064debd12
-  FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
-  FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
-  FBSDKShareKit: a42865f20ba2d1cc548c4d0f73ad22cff6377ddb
-  JTSImageViewController: 6a367b144e257db02cdfacdba78d684377d3777b
-  MJRefresh: be84acb912d0a66364f76a75426698a39528e2ed
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
+  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
+  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
+  MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SnapKit: 69fe274c71511df89a5591c11437a8b826bfa9eb
+  SnapKit: e1f090a6d47b1dd4bd89b73f72b6746a7835ef3c
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
-  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
-  TextFieldEffects: de5b2db55fd8af5d5bfe0c7ce5a023076f2835a2
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
   VENCore: 7adedc7c0e65e3ba922cc21c35f3d0e133d43df7
   Venmo-iOS-SDK: 456097c6df57544362719ea8db01541953aec44d
-  WYInteractiveTransitions: 46f4513f465ba09f540815e73cfc6f61848c0a59
-  ZFRippleButton: 22118e02b6dd0cbe1dc85aa666579c30fc817021
+  WYInteractiveTransitions: ddf464521ca4534a9d47b74f29e6e0ff561c126d
+  ZFRippleButton: 263bdf4e31dabd5826133b121d9ff908c87a6a11
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

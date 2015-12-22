@@ -83,7 +83,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
                 return false
             }
             
-            if (find(textField.text, "." as Character) != nil) && string == "."{
+            if (textField.text.characters.indexOf("." as Character) != nil) && string == "."{
                 return false
             }
                 
@@ -101,7 +101,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
             totalAmount.text = "$ 0"
         }
         if let balance = totalAmount.text {
-            let startIndex = advance(balance.startIndex, 2)
+            let startIndex = balance.startIndex.advancedBy(2)
             let range = startIndex..<balance.endIndex
             let digits = balance.substringWithRange(range)
             let number = (digits as NSString).doubleValue
@@ -134,7 +134,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         updateBalance()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         totalAmount.resignFirstResponder()
         theTitle.resignFirstResponder()
     }
@@ -153,7 +153,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
         if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
             imagePicker!.allowsEditing = false
             imagePicker!.sourceType = UIImagePickerControllerSourceType.Camera
-            imagePicker!.mediaTypes = [kUTTypeImage]
+            imagePicker!.mediaTypes = [kUTTypeImage as String]
             imagePicker!.cameraCaptureMode = .Photo
             
             shouldSaveToAlbum = true
@@ -202,17 +202,17 @@ class AddBillViewController: UIViewController, UITextFieldDelegate{
     
     func invokePopOver() {
         
-        var alert:UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let alert:UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) {
+        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) {
             UIAlertAction in
             self.openCamera()
         }
-        var gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) {
+        let gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) {
             UIAlertAction in
             self.openGallery()
         }
-        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
             UIAlertAction in
         }
         

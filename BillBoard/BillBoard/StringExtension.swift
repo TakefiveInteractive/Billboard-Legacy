@@ -10,23 +10,23 @@ import UIKit
 
 extension String {
     func substringToIndex(index:Int) -> String {
-        return self.substringToIndex(advance(self.startIndex, index))
+        return self.substringToIndex(self.startIndex.advancedBy(index))
     }
     func substringFromIndex(index:Int) -> String {
-        return self.substringFromIndex(advance(self.startIndex, index))
+        return self.substringFromIndex(self.startIndex.advancedBy(index))
     }
     func substringWithRange(range:Range<Int>) -> String {
-        let start = advance(self.startIndex, range.startIndex)
-        let end = advance(self.startIndex, range.endIndex)
+        let start = self.startIndex.advancedBy(range.startIndex)
+        let end = self.startIndex.advancedBy(range.endIndex)
         return self.substringWithRange(start..<end)
     }
     
     subscript(index:Int) -> Character{
-        return self[advance(self.startIndex, index)]
+        return self[self.startIndex.advancedBy(index)]
     }
     subscript(range:Range<Int>) -> String {
-        let start = advance(self.startIndex, range.startIndex)
-        let end = advance(self.startIndex, range.endIndex)
+        let start = self.startIndex.advancedBy(range.startIndex)
+        let end = self.startIndex.advancedBy(range.endIndex)
         return self[start..<end]
     }
 }

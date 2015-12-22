@@ -32,7 +32,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("confirmcell")
+        let cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("confirmcell")
         (cell as! UITableViewCell).selectionStyle = UITableViewCellSelectionStyle.None
         (cell as! ConfirmCell).peopleName.text = nameData[indexPath.item]
         (cell as! ConfirmCell).amount.text = amountData[indexPath.item]
